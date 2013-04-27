@@ -15,6 +15,11 @@ Requirements
 * lxml: library for processing xml in python
 * Alpino parser:http://www.let.rug.nl/vannoord/alp/Alpino/
 
+Installation
+-----------
+Clone the repository to your local machine and set the varible ALPINO_HOME in the file core/alpino_parser.py
+to point to your local folder of the Alpino parser.
+
 How to run the module with Python
 ---------------------------------
 
