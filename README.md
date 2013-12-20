@@ -1,7 +1,5 @@
-[![Build Status](https://drone.io/github.com/opener-project/constituent-parser-nl/status.png)](https://drone.io/github.com/opener-project/constituent-parser-nl/latest)
-
-VU-parser-NL_kernel
-===================
+Constituent-parser-nl
+=======
 
 Introduction
 ------------
