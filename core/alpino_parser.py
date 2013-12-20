@@ -14,6 +14,16 @@ import logging
 
 from tree import Tree
 
+## LAST CHANGES ##
+# 20-dec-2013: modified to generate KAF output
+
+last_modified='20dec2013'
+version="1.0"
+this_name = 'alpino kaf constituency parser'
+this_layer = 'constituents'
+
+
+## will be used as global variables to generate recursively the KAF constituent nodes
 NOTER='nonter'
 TER='ter'
 EDGE='edge'
@@ -57,6 +67,16 @@ def xml_to_penn(filename):
 
 
 
+
+##This function generates a "tree" xml element as defined in KAF from a string containing
+##the penntreebank format and a list of term ids to do the linking
+'''           
+s = '(S (NP (DET The) (NN dog)) (VP (V ate) (NP (DET the) (NN cat))) (. .))'
+ids = ['t0 t1','t2','t3','t4','t5','t6']
+tree_node = create_constituency_layer(s, ids)
+e = etree.ElementTree(element=tree_node)
+e.write(sys.stdout,pretty_print=True)
+'''
 def create_constituency_layer(tree_str,term_ids):
     global NOTER, TER, EDGE, noter_cnt,ter_cnt,edge_cnt
 
@@ -68,16 +88,18 @@ def create_constituency_layer(tree_str,term_ids):
         this_tree[position] = token_id
     
 
+    ## TO include a root node
+    my_noter_root_id = 'nter'+str(noter_cnt)
+    noter_cnt+=1
+    my_edge_root_id = 'tre'+str(edge_cnt)
+    edge_cnt+=1
+    
     linking_id, nodes = generate_nodes(this_tree)
     
     ## TO include a root node
-    my_noter_id = 'nter'+str(noter_cnt)
-    my_noter  = (NOTER,my_noter_id,'ROOT')
-    noter_cnt+=1
+    my_noter  = (NOTER,my_noter_root_id,'ROOT')
+    my_edge = (EDGE,my_edge_root_id,my_noter_root_id,linking_id)
     nodes.insert(0,my_noter)
-    
-    my_edge = (EDGE,'tre'+str(edge_cnt),my_noter_id,linking_id)
-    edge_cnt+=1
     nodes.insert(0,my_edge)
     
     
@@ -124,9 +146,9 @@ def create_constituency_layer(tree_str,term_ids):
     return root
         
 ##This is the recursive function to generate all the nodes behind a node
+## It will generate all the terminal, non-terminal and edges nodes
 def generate_nodes(node):
     global NOTER, TER, EDGE, noter_cnt,ter_cnt,edge_cnt
-
     if isinstance(node, str):  ## is a leaf
         # This is just a text (a token id)
         my_ter_id = "ter"+str(ter_cnt)
@@ -142,23 +164,13 @@ def generate_nodes(node):
         
         for child in node:
             linking_id, subnodes = generate_nodes(child)
-            nodes.extend(subnodes)
-            
+            nodes.extend(subnodes) 
             my_edge_id = 'tre'+str(edge_cnt)
             edge_cnt += 1
             my_edge = (EDGE,my_edge_id,my_nonter_id,linking_id)
             nodes.append(my_edge)
-            
         return my_nonter_id,nodes
             
-'''           
-s = '(S (NP (DET The) (NN dog)) (VP (V ate) (NP (DET the) (NN cat))) (. .))'
-ids = ['t0 t1','t2','t3','t4','t5','t6']
-tree_node = create_constituency_layer(s, ids)
-e = etree.ElementTree(element=tree_node)
-e.write(sys.stdout,pretty_print=True)
-sys.exit(0)
-'''
 
 if not sys.stdin.isatty(): 
     ## READING FROM A PIPE
@@ -254,11 +266,7 @@ for xml_file in glob.glob(os.path.join(out_folder_alp,'*.xml')):
   num_xml+=1
 
 my_kaf.tree.getroot().append(const)
-this_name = 'alpino kaf constituency parser'
-this_version = '1.0_20dec2013'
-this_layer = 'constituents'
-
-my_kaf.addLinguisticProcessor(this_name, this_version, this_layer, my_time_stamp)
+my_kaf.addLinguisticProcessor(this_name, version+'_'+last_modified, this_layer, my_time_stamp)
 my_kaf.saveToFile(sys.stdout)
   
 
