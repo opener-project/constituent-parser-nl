@@ -12,6 +12,15 @@ import shutil
 import glob
 import logging
 
+from tree import Tree
+
+NOTER='nonter'
+TER='ter'
+EDGE='edge'
+noter_cnt=0
+ter_cnt=0
+edge_cnt=0
+
 
 #### SET THIS VARIABLE TO YOUR LOCAL FOLDER OF ALPINO
 ALPINO_HOME = '/Users/ruben/NLP_tools/Alpino'
@@ -39,6 +48,7 @@ def node_to_penn(node):
       str+=node_to_penn(n)
     str+=')'
     return str
+
     
 def xml_to_penn(filename):
   tree = etree.parse(filename)
@@ -46,7 +56,109 @@ def xml_to_penn(filename):
   return str
 
 
-## MAIN ##
+
+def create_constituency_layer(tree_str,term_ids):
+    global NOTER, TER, EDGE, noter_cnt,ter_cnt,edge_cnt
+
+    this_tree = Tree(tree_str)
+    
+    for num, token in enumerate(this_tree.leaves()):
+        position = this_tree.leaf_treeposition(num)
+        token_id = term_ids[num]
+        this_tree[position] = token_id
+    
+
+    linking_id, nodes = generate_nodes(this_tree)
+    
+    ## TO include a root node
+    my_noter_id = 'nter'+str(noter_cnt)
+    my_noter  = (NOTER,my_noter_id,'ROOT')
+    noter_cnt+=1
+    nodes.insert(0,my_noter)
+    
+    my_edge = (EDGE,'tre'+str(edge_cnt),my_noter_id,linking_id)
+    edge_cnt+=1
+    nodes.insert(0,my_edge)
+    
+    
+   
+    ## non terminals
+    nonter_nodes = []
+    edges_nodes=  []
+    ter_nodes = []
+    nonter_heads = set()
+    for n in nodes:
+        if n[0] == NOTER:            
+            _,nonter_id,label = n
+            ##Checking the head
+            if len(label)>=2 and label[-1]=='H' and label[-2]=='=':
+                nonter_heads.add(nonter_id)
+                label = label[:-2]
+            ele = etree.Element('nt', attrib={'id':nonter_id,'label':label})
+            nonter_nodes.append(ele)
+        elif n[0] == EDGE:
+            _,edge_id,node_to,node_from = n
+            ele = etree.Element('edge',attrib={'id':edge_id,'from':node_from,'to':node_to})
+            edges_nodes.append(ele)
+        elif n[0] == TER:
+            _,ter_id,span_ids = n
+            ele = etree.Element('t',attrib={'id':ter_id})
+            span = etree.Element('span')
+            ele.append(span)
+            for termid in span_ids.split(' '):
+                target = etree.Element('target',attrib={'id':termid})
+                span.append(target)
+            ter_nodes.append(ele)
+            
+    root = etree.Element('tree')
+    for nt in nonter_nodes:
+        root.append(nt)
+    
+    for t in ter_nodes:
+        root.append(t)
+        
+    for ed in edges_nodes:
+        if ed.get('from') in nonter_heads:
+            ed.set('head','yes')
+        root.append(ed)        
+    return root
+        
+##This is the recursive function to generate all the nodes behind a node
+def generate_nodes(node):
+    global NOTER, TER, EDGE, noter_cnt,ter_cnt,edge_cnt
+
+    if isinstance(node, str):  ## is a leaf
+        # This is just a text (a token id)
+        my_ter_id = "ter"+str(ter_cnt)
+        ter_cnt+=1
+        my_ter = (TER,my_ter_id,str(node))
+        return my_ter_id,[my_ter]
+    else:
+        nodes = []
+        my_nonter_id = 'nter'+str(noter_cnt)
+        noter_cnt+=1
+        my_nonter = (NOTER,my_nonter_id,node.node)
+        nodes.append(my_nonter)
+        
+        for child in node:
+            linking_id, subnodes = generate_nodes(child)
+            nodes.extend(subnodes)
+            
+            my_edge_id = 'tre'+str(edge_cnt)
+            edge_cnt += 1
+            my_edge = (EDGE,my_edge_id,my_nonter_id,linking_id)
+            nodes.append(my_edge)
+            
+        return my_nonter_id,nodes
+            
+'''           
+s = '(S (NP (DET The) (NN dog)) (VP (V ate) (NP (DET the) (NN cat))) (. .))'
+ids = ['t0 t1','t2','t3','t4','t5','t6']
+tree_node = create_constituency_layer(s, ids)
+e = etree.ElementTree(element=tree_node)
+e.write(sys.stdout,pretty_print=True)
+sys.exit(0)
+'''
 
 if not sys.stdin.isatty(): 
     ## READING FROM A PIPE
@@ -78,17 +190,32 @@ if lang != 'nl':
 logging.debug('Extracting sentences from the KAF')
 sentences = []
 current_sent = [] 
+term_ids = []
+current_sent_tid = []
+
+termid_for_token = {}
+
+for term in my_kaf.getTerms():
+    tokens_id = term.get_list_span()
+    for token_id in tokens_id:
+        termid_for_token[token_id] = term.getId()
+ 
+
 previous_sent = None
 for token,sent,token_id in my_kaf.getTokens():
   if sent != previous_sent and previous_sent!=None:
     sentences.append(current_sent)
     current_sent = [token]
+    term_ids.append(current_sent_tid)
+    current_sent_tid = [termid_for_token[token_id]]
   else:
     current_sent.append(token)
+    current_sent_tid.append(termid_for_token[token_id])
   previous_sent = sent
   
 if len(current_sent) !=0:
   sentences.append(current_sent)
+  term_ids.append(current_sent_tid)
   
 out_folder_alp = tempfile.mkdtemp()
 
@@ -117,11 +244,24 @@ alpino_pro.wait()
 ## There should be as many files as number of sentences in the KAF
 
 num_xml = 0
+const = etree.Element('constituents')
 for xml_file in glob.glob(os.path.join(out_folder_alp,'*.xml')):
   logging.debug('Converting alpino XML to pennTreebank, file num '+str(num_xml+1))
-  print xml_to_penn(xml_file)
-  num_xml+=1
+  penn_str = xml_to_penn(xml_file)
   
+  tree_node = create_constituency_layer(penn_str,term_ids[num_xml])
+  const.append(tree_node)
+  num_xml+=1
+
+my_kaf.tree.getroot().append(const)
+this_name = 'alpino kaf constituency parser'
+this_version = '1.0_20dec2013'
+this_layer = 'constituents'
+
+my_kaf.addLinguisticProcessor(this_name, this_version, this_layer, my_time_stamp)
+my_kaf.saveToFile(sys.stdout)
+  
+
 logging.debug('Number of sentences in the input KAF:                            '+str(len(sentences)))
 logging.debug('Number of alpino XML generated (must be equal to num. sentences):'+str(num_xml))
 logging.debug('PROCESS DONE')
