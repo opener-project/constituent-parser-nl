@@ -1,3 +1,5 @@
+[![Build Status](https://drone.io/github.com/opener-project/constituent-parser-base/status.png)](https://drone.io/github.com/opener-project/constituent-parser-base/latest)
+
 Constituent-parser-nl
 =======
 
