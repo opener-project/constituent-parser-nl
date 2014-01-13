@@ -116,6 +116,7 @@ if len(current_sent) !=0:
   sentences.append(current_sent)
   term_ids.append(current_sent_tid)
   
+  
 out_folder_alp = tempfile.mkdtemp()
 
 
@@ -142,23 +143,24 @@ alpino_pro.wait()
 
 ## There should be as many files as number of sentences in the KAF
 
-num_xml = 0
 const = etree.Element('constituency')
-for xml_file in glob.glob(os.path.join(out_folder_alp,'*.xml')):
-  logging.debug('Converting alpino XML to pennTreebank, file num '+str(num_xml+1))
+
+#for xml_file in glob.glob(os.path.join(out_folder_alp,'*.xml')):
+
+for num_sent in range(len(sentences)):
+  xml_file = os.path.join(out_folder_alp,str(num_sent+1)+'.xml')    
+  logging.debug('Converting alpino XML to pennTreebank, sentence num '+str(num_sent+1))
   penn_str = xml_to_penn(xml_file)
-  
-  tree_node = convert_penn_to_kaf(penn_str,term_ids[num_xml])
+  tree_node = convert_penn_to_kaf(penn_str,term_ids[num_sent])
   const.append(tree_node)
-  num_xml+=1
+
 
 my_kaf.tree.getroot().append(const)
 my_kaf.addLinguisticProcessor(this_name, version+'_'+last_modified, this_layer, my_time_stamp)
 my_kaf.saveToFile(sys.stdout)
   
 
-logging.debug('Number of sentences in the input KAF:                            '+str(len(sentences)))
-logging.debug('Number of alpino XML generated (must be equal to num. sentences):'+str(num_xml))
+logging.debug('Number of sentences in the input KAF:  '+str(len(sentences)))
 logging.debug('PROCESS DONE')
 
 ##Remove temporary stuff

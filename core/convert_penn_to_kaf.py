@@ -23,7 +23,6 @@ def convert_penn_to_kaf(tree_str,term_ids):
     global NOTER, TER, EDGE, noter_cnt,ter_cnt,edge_cnt
 
     this_tree = Tree(tree_str)
-    
     for num, token in enumerate(this_tree.leaves()):
         position = this_tree.leaf_treeposition(num)
         token_id = term_ids[num]
