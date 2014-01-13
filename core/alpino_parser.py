@@ -143,7 +143,7 @@ alpino_pro.wait()
 ## There should be as many files as number of sentences in the KAF
 
 num_xml = 0
-const = etree.Element('constituents')
+const = etree.Element('constituency')
 for xml_file in glob.glob(os.path.join(out_folder_alp,'*.xml')):
   logging.debug('Converting alpino XML to pennTreebank, file num '+str(num_xml+1))
   penn_str = xml_to_penn(xml_file)

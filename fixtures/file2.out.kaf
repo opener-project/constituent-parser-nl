@@ -352,7 +352,7 @@
       </span>
     </term>
   </terms>
-  <constituents>
+  <constituency>
     <tree>
       <nt id="nter0" label="ROOT"/>
       <nt id="nter1" label="top"/>
@@ -864,5 +864,5 @@
       <edge from="ter53" id="tre141" to="nter91"/>
       <edge from="nter91" id="tre142" to="nter74"/>
     </tree>
-  </constituents>
+  </constituency>
 </KAF>
