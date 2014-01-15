@@ -6,7 +6,7 @@
       <lp timestamp="*" version="1.0" name="Open-nlp tokenizer"/>
     </linguisticProcessors>
     <linguisticProcessor layer="constituents">
-      <lp timestamp="*" version="1.0_20dec2013" name="alpino kaf constituency parser"/>
+      <lp timestamp="*" version="1.1_20dec2013" name="alpino kaf constituency parser"/>
     </linguisticProcessor>
     <linguisticProcessor layer="term">
       <lp timestamp="2013-12-20T17:47:28CET" version="1.0" name="Open nlp pos tagger"/>
@@ -90,17 +90,16 @@
   </terms>
   <constituency>
     <tree>
-      <nt id="nter0" label="ROOT"/>
-      <nt id="nter1" label="top"/>
-      <nt id="nter2" label="smain"/>
-      <nt id="nter3" label="np"/>
-      <nt id="nter4" label="det"/>
-      <nt id="nter5" label="noun"/>
-      <nt id="nter6" label="verb"/>
-      <nt id="nter7" label="ap"/>
+      <nt id="nter0" label="top"/>
+      <nt id="nter1" label="smain"/>
+      <nt id="nter2" label="np"/>
+      <nt id="nter3" label="det"/>
+      <nt id="nter4" label="noun"/>
+      <nt id="nter5" label="verb"/>
+      <nt id="nter6" label="ap"/>
+      <nt id="nter7" label="adj"/>
       <nt id="nter8" label="adj"/>
-      <nt id="nter9" label="adj"/>
-      <nt id="nter10" label="punct"/>
+      <nt id="nter9" label="punct"/>
       <t id="ter0">
         <span>
           <target id="t1"/>
@@ -131,35 +130,33 @@
           <target id="t6"/>
         </span>
       </t>
-      <edge from="nter1" id="tre0" to="nter0"/>
-      <edge from="ter0" id="tre1" to="nter4"/>
-      <edge from="nter4" id="tre2" to="nter3"/>
-      <edge from="ter1" id="tre3" to="nter5"/>
-      <edge from="nter5" id="tre4" to="nter3" head="yes"/>
-      <edge from="nter3" id="tre5" to="nter2"/>
-      <edge from="ter2" id="tre6" to="nter6"/>
-      <edge from="nter6" id="tre7" to="nter2" head="yes"/>
-      <edge from="ter3" id="tre8" to="nter8"/>
-      <edge from="nter8" id="tre9" to="nter7"/>
-      <edge from="ter4" id="tre10" to="nter9"/>
-      <edge from="nter9" id="tre11" to="nter7" head="yes"/>
-      <edge from="nter7" id="tre12" to="nter2"/>
-      <edge from="nter2" id="tre13" to="nter1"/>
-      <edge from="ter5" id="tre14" to="nter10"/>
-      <edge from="nter10" id="tre15" to="nter1"/>
+      <edge from="ter0" id="tre0" to="nter3"/>
+      <edge from="nter3" id="tre1" to="nter2"/>
+      <edge from="ter1" id="tre2" to="nter4"/>
+      <edge from="nter4" id="tre3" to="nter2" head="yes"/>
+      <edge from="nter2" id="tre4" to="nter1"/>
+      <edge from="ter2" id="tre5" to="nter5"/>
+      <edge from="nter5" id="tre6" to="nter1" head="yes"/>
+      <edge from="ter3" id="tre7" to="nter7"/>
+      <edge from="nter7" id="tre8" to="nter6"/>
+      <edge from="ter4" id="tre9" to="nter8"/>
+      <edge from="nter8" id="tre10" to="nter6" head="yes"/>
+      <edge from="nter6" id="tre11" to="nter1"/>
+      <edge from="nter1" id="tre12" to="nter0"/>
+      <edge from="ter5" id="tre13" to="nter9"/>
+      <edge from="nter9" id="tre14" to="nter0"/>
     </tree>
     <tree>
-      <nt id="nter11" label="ROOT"/>
-      <nt id="nter12" label="top"/>
-      <nt id="nter13" label="smain"/>
-      <nt id="nter14" label="np"/>
-      <nt id="nter15" label="det"/>
-      <nt id="nter16" label="noun"/>
-      <nt id="nter17" label="verb"/>
-      <nt id="nter18" label="ap"/>
-      <nt id="nter19" label="adj"/>
-      <nt id="nter20" label="adj"/>
-      <nt id="nter21" label="punct"/>
+      <nt id="nter10" label="top"/>
+      <nt id="nter11" label="smain"/>
+      <nt id="nter12" label="np"/>
+      <nt id="nter13" label="det"/>
+      <nt id="nter14" label="noun"/>
+      <nt id="nter15" label="verb"/>
+      <nt id="nter16" label="ap"/>
+      <nt id="nter17" label="adj"/>
+      <nt id="nter18" label="adj"/>
+      <nt id="nter19" label="punct"/>
       <t id="ter6">
         <span>
           <target id="t7"/>
@@ -190,22 +187,21 @@
           <target id="t12"/>
         </span>
       </t>
-      <edge from="nter12" id="tre16" to="nter11"/>
-      <edge from="ter6" id="tre17" to="nter15"/>
-      <edge from="nter15" id="tre18" to="nter14"/>
-      <edge from="ter7" id="tre19" to="nter16"/>
-      <edge from="nter16" id="tre20" to="nter14" head="yes"/>
-      <edge from="nter14" id="tre21" to="nter13"/>
-      <edge from="ter8" id="tre22" to="nter17"/>
-      <edge from="nter17" id="tre23" to="nter13" head="yes"/>
-      <edge from="ter9" id="tre24" to="nter19"/>
-      <edge from="nter19" id="tre25" to="nter18"/>
-      <edge from="ter10" id="tre26" to="nter20"/>
-      <edge from="nter20" id="tre27" to="nter18" head="yes"/>
-      <edge from="nter18" id="tre28" to="nter13"/>
-      <edge from="nter13" id="tre29" to="nter12"/>
-      <edge from="ter11" id="tre30" to="nter21"/>
-      <edge from="nter21" id="tre31" to="nter12"/>
+      <edge from="ter6" id="tre15" to="nter13"/>
+      <edge from="nter13" id="tre16" to="nter12"/>
+      <edge from="ter7" id="tre17" to="nter14"/>
+      <edge from="nter14" id="tre18" to="nter12" head="yes"/>
+      <edge from="nter12" id="tre19" to="nter11"/>
+      <edge from="ter8" id="tre20" to="nter15"/>
+      <edge from="nter15" id="tre21" to="nter11" head="yes"/>
+      <edge from="ter9" id="tre22" to="nter17"/>
+      <edge from="nter17" id="tre23" to="nter16"/>
+      <edge from="ter10" id="tre24" to="nter18"/>
+      <edge from="nter18" id="tre25" to="nter16" head="yes"/>
+      <edge from="nter16" id="tre26" to="nter11"/>
+      <edge from="nter11" id="tre27" to="nter10"/>
+      <edge from="ter11" id="tre28" to="nter19"/>
+      <edge from="nter19" id="tre29" to="nter10"/>
     </tree>
   </constituency>
 </KAF>

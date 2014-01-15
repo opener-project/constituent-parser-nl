@@ -1,5 +1,7 @@
 from lxml import etree
 from tree import Tree
+import logging
+
 
 
 ## will be used as global variables to generate recursively the KAF constituent nodes
@@ -19,29 +21,42 @@ tree_node = create_constituency_layer(s, ids)
 e = etree.ElementTree(element=tree_node)
 e.write(sys.stdout,pretty_print=True)
 '''
-def convert_penn_to_kaf(tree_str,term_ids):
+def convert_penn_to_kaf_with_numtokens(tree_str,term_ids,logging,lemma_for_termid):
     global NOTER, TER, EDGE, noter_cnt,ter_cnt,edge_cnt
 
     this_tree = Tree(tree_str)
-    for num, token in enumerate(this_tree.leaves()):
+    c = (repr(this_tree)).encode('utf-8')
+    c = c.encode('utf-8')
+    logging.debug('Penn tree: '+c)
+    
+    for num, num_token_and_token in enumerate(this_tree.leaves()):
+        ## token is not used at all
+        ##print num,token,position,token_id
+        p = num_token_and_token.find('#')
+        num_token = int(num_token_and_token[:p])
         position = this_tree.leaf_treeposition(num)
-        token_id = term_ids[num]
+        token_id = term_ids[int(num_token)]
         this_tree[position] = token_id
+        logging.debug('Matching '+num_token_and_token.encode('utf-8')+' with term id='+token_id+'  according to KAF lemma='+str(lemma_for_termid.get(token_id).encode('utf-8')))
+
     
 
     ## TO include a root node
-    my_noter_root_id = 'nter'+str(noter_cnt)
-    noter_cnt+=1
-    my_edge_root_id = 'tre'+str(edge_cnt)
-    edge_cnt+=1
+    include_extra_root = False
+    if include_extra_root:
+        my_noter_root_id = 'nter'+str(noter_cnt)
+        noter_cnt+=1
+        my_edge_root_id = 'tre'+str(edge_cnt)
+        edge_cnt+=1
     
     linking_id, nodes = generate_nodes(this_tree)
     
-    ## TO include a root node
-    my_noter  = (NOTER,my_noter_root_id,'ROOT')
-    my_edge = (EDGE,my_edge_root_id,my_noter_root_id,linking_id)
-    nodes.insert(0,my_noter)
-    nodes.insert(0,my_edge)
+    if include_extra_root:
+        ## TO include a root node
+        my_noter  = (NOTER,my_noter_root_id,'ROOT')
+        my_edge = (EDGE,my_edge_root_id,my_noter_root_id,linking_id)
+        nodes.insert(0,my_noter)
+        nodes.insert(0,my_edge)
     
     
    

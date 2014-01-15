@@ -12,12 +12,15 @@ import shutil
 import glob
 import logging
 
-from convert_penn_to_kaf import convert_penn_to_kaf
+from convert_penn_to_kaf import convert_penn_to_kaf_with_numtokens
 ## LAST CHANGES ##
 # 20-dec-2013: modified to generate KAF output
+# 15-jan-2014: order in alpino XML does not math the order of tokens
+#       so the label "begin" in the xml is used to know which is the number of token of each <node>
 
-last_modified='20dec2013'
-version="1.0"
+
+last_modified='15jan2014'
+version="1.1"
 this_name = 'alpino kaf constituency parser'
 this_layer = 'constituents'
 
@@ -37,6 +40,15 @@ def node_to_penn(node):
   if len(children) == 0:
     word = node.get('word',None)
     if word is not None:
+        
+      #The attribute begin gives you the number of the token
+      word = word.replace('(','-LRB')
+      word = word.replace(')','-RRB-')
+      
+      
+      num_token = node.get('begin')
+
+      word = num_token+'#'+word
       if node.get('rel') == 'hd': 
         head = '=H'
       else: 
@@ -92,9 +104,12 @@ current_sent = []
 term_ids = []
 current_sent_tid = []
 
+    
+lemma_for_termid = {}
 termid_for_token = {}
 
 for term in my_kaf.getTerms():
+    lemma_for_termid[term.getId()] = term.getLemma()
     tokens_id = term.get_list_span()
     for token_id in tokens_id:
         termid_for_token[token_id] = term.getId()
@@ -129,11 +144,14 @@ alpino_pro = Popen(cmd,stdout=PIPE,stdin=PIPE,stderr=PIPE,shell=True)
 
 for sentence in sentences:
   for token in sentence:
+    token = token.replace('[','\[')
+    token = token.replace(']','\]')
+    token = token.replace('|','\|')
     alpino_pro.stdin.write(token.encode('utf-8')+' ')
   alpino_pro.stdin.write('\n')
 alpino_pro.stdin.close()
 
-print>>sys.stderr,alpino_pro.stderr.read()
+#print>>sys.stderr,alpino_pro.stderr.read()
 
 # As we are not reading the stdout or stderr of the process, if we dont wait to it to be done
 # the parent will keep running without alpino be completed, and we will get empty XML files
@@ -151,7 +169,7 @@ for num_sent in range(len(sentences)):
   xml_file = os.path.join(out_folder_alp,str(num_sent+1)+'.xml')    
   logging.debug('Converting alpino XML to pennTreebank, sentence num '+str(num_sent+1))
   penn_str = xml_to_penn(xml_file)
-  tree_node = convert_penn_to_kaf(penn_str,term_ids[num_sent])
+  tree_node = convert_penn_to_kaf_with_numtokens(penn_str,term_ids[num_sent],logging,lemma_for_termid)
   const.append(tree_node)
 
 
