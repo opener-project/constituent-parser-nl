@@ -25,10 +25,7 @@ def convert_penn_to_kaf_with_numtokens(tree_str,term_ids,logging,lemma_for_termi
     global NOTER, TER, EDGE, noter_cnt,ter_cnt,edge_cnt
 
     this_tree = Tree(tree_str)
-    c = (repr(this_tree)).encode('utf-8')
-    c = c.encode('utf-8')
-    logging.debug('Penn tree: '+c)
-    
+    logging.debug('\n'+str(this_tree))    ##It has been already encoded using iso-8859-1
     for num, num_token_and_token in enumerate(this_tree.leaves()):
         ## token is not used at all
         ##print num,token,position,token_id
@@ -37,7 +34,7 @@ def convert_penn_to_kaf_with_numtokens(tree_str,term_ids,logging,lemma_for_termi
         position = this_tree.leaf_treeposition(num)
         token_id = term_ids[int(num_token)]
         this_tree[position] = token_id
-        logging.debug('Matching '+num_token_and_token.encode('utf-8')+' with term id='+token_id+'  according to KAF lemma='+str(lemma_for_termid.get(token_id).encode('utf-8')))
+        logging.debug('Matching '+num_token_and_token+' with term id='+token_id+'  according to KAF lemma='+str(lemma_for_termid.get(token_id).encode('utf-8')))
 
     
 

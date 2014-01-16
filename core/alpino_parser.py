@@ -40,7 +40,7 @@ def node_to_penn(node):
   if len(children) == 0:
     word = node.get('word',None)
     if word is not None:
-        
+       
       #The attribute begin gives you the number of the token
       word = word.replace('(','-LRB')
       word = word.replace(')','-RRB-')
@@ -53,7 +53,8 @@ def node_to_penn(node):
         head = '=H'
       else: 
         head = ''
-      return '('+node.get('pos')+head+' '+word+')'
+      ## Alpino generates ISO-8859-1 encoding, so we need to to this for being able to encode symbols like EURO
+      return '('+node.get('pos')+head+' '+word.encode('iso-8859-1')+')'
     else:
       return ''
   else:
@@ -183,4 +184,5 @@ logging.debug('PROCESS DONE')
 
 ##Remove temporary stuff
 shutil.rmtree(out_folder_alp)
+#print out_folder_alp
 sys.exit(0)
