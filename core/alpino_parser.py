@@ -20,7 +20,7 @@ from convert_penn_to_kaf import convert_penn_to_kaf_with_numtokens
 
 
 last_modified='17Jan2014'
-version="1.2"
+version="1.3"
 this_name = 'alpino kaf constituency parser'
 this_layer = 'constituents'
 

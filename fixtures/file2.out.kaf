@@ -6,7 +6,7 @@
       <lp timestamp="*" version="1.0" name="Open-nlp tokenizer"/>
     </linguisticProcessors>
     <linguisticProcessor layer="constituents">
-      <lp timestamp="*" version="1.2_17Jan2014" name="alpino kaf constituency parser"/>
+      <lp timestamp="*" version="1.3_17Jan2014" name="alpino kaf constituency parser"/>
     </linguisticProcessor>
     <linguisticProcessor layer="term">
       <lp timestamp="2013-12-20T18:21:40CET" version="1.0" name="Open nlp pos tagger"/>
@@ -493,111 +493,111 @@
         </span>
       </t>
       <!--  tre0  ROOT <- top -->
-      <edge from="nter0" id="tre0" to="nter1"/>
+      <edge from="nter1" id="tre0" to="nter0"/>
       <!--  tre1  top <- punct -->
-      <edge from="nter1" id="tre1" to="nter2"/>
+      <edge from="nter2" id="tre1" to="nter1"/>
       <!--  tre2  punct <- ( -->
-      <edge from="nter2" id="tre2" to="ter0"/>
+      <edge from="ter0" id="tre2" to="nter2"/>
       <!--  tre3  top <- punct -->
-      <edge from="nter1" id="tre3" to="nter3"/>
+      <edge from="nter3" id="tre3" to="nter1"/>
       <!--  tre4  punct <- , -->
-      <edge from="nter3" id="tre4" to="ter1"/>
+      <edge from="ter1" id="tre4" to="nter3"/>
       <!--  tre5  top <- punct -->
-      <edge from="nter1" id="tre5" to="nter4"/>
+      <edge from="nter4" id="tre5" to="nter1"/>
       <!--  tre6  punct <- ) -->
-      <edge from="nter4" id="tre6" to="ter2"/>
+      <edge from="ter2" id="tre6" to="nter4"/>
       <!--  tre7  top <- smain -->
-      <edge from="nter1" id="tre7" to="nter5"/>
+      <edge from="nter5" id="tre7" to="nter1"/>
       <!--  tre8  smain <- np -->
-      <edge from="nter5" id="tre8" to="nter6"/>
+      <edge from="nter6" id="tre8" to="nter5"/>
       <!--  tre9  np <- mwu -->
-      <edge from="nter6" id="tre9" to="nter7"/>
+      <edge from="nter7" id="tre9" to="nter6"/>
       <!--  tre10  mwu <- name -->
-      <edge from="nter7" id="tre10" to="nter8"/>
+      <edge from="nter8" id="tre10" to="nter7"/>
       <!--  tre11  name <- Beatrix -->
-      <edge from="nter8" id="tre11" to="ter3"/>
+      <edge from="ter3" id="tre11" to="nter8"/>
       <!--  tre12  mwu <- name -->
-      <edge from="nter7" id="tre12" to="nter9"/>
+      <edge from="nter9" id="tre12" to="nter7"/>
       <!--  tre13  name <- Wilhelmina -->
-      <edge from="nter9" id="tre13" to="ter4"/>
+      <edge from="ter4" id="tre13" to="nter9"/>
       <!--  tre14  mwu <- name -->
-      <edge from="nter7" id="tre14" to="nter10"/>
+      <edge from="nter10" id="tre14" to="nter7"/>
       <!--  tre15  name <- Armgard -->
-      <edge from="nter10" id="tre15" to="ter5"/>
+      <edge from="ter5" id="tre15" to="nter10"/>
       <!--  tre16  np <- pp -->
-      <edge from="nter6" id="tre16" to="nter11"/>
+      <edge from="nter11" id="tre16" to="nter6"/>
       <!--  tre17  pp <- prep -->
-      <edge from="nter11" id="tre17" to="nter12"/>
+      <edge from="nter12" id="tre17" to="nter11" head="yes"/>
       <!--  tre18  prep <- van -->
-      <edge from="nter12" id="tre18" to="ter6" head="yes"/>
+      <edge from="ter6" id="tre18" to="nter12"/>
       <!--  tre19  pp <- np -->
-      <edge from="nter11" id="tre19" to="nter13"/>
+      <edge from="nter13" id="tre19" to="nter11"/>
       <!--  tre20  np <- name -->
-      <edge from="nter13" id="tre20" to="nter14"/>
+      <edge from="nter14" id="tre20" to="nter13" head="yes"/>
       <!--  tre21  name <- Oranje-Nassau -->
-      <edge from="nter14" id="tre21" to="ter7" head="yes"/>
+      <edge from="ter7" id="tre21" to="nter14"/>
       <!--  tre22  np <- np -->
-      <edge from="nter13" id="tre22" to="nter15"/>
+      <edge from="nter15" id="tre22" to="nter13"/>
       <!--  tre23  np <- name -->
-      <edge from="nter15" id="tre23" to="nter16"/>
+      <edge from="nter16" id="tre23" to="nter15" head="yes"/>
       <!--  tre24  name <- Baarn -->
-      <edge from="nter16" id="tre24" to="ter8" head="yes"/>
+      <edge from="ter8" id="tre24" to="nter16"/>
       <!--  tre25  np <- mwu -->
-      <edge from="nter15" id="tre25" to="nter17"/>
+      <edge from="nter17" id="tre25" to="nter15"/>
       <!--  tre26  mwu <- noun -->
-      <edge from="nter17" id="tre26" to="nter18"/>
+      <edge from="nter18" id="tre26" to="nter17"/>
       <!--  tre27  noun <- 31 -->
-      <edge from="nter18" id="tre27" to="ter9"/>
+      <edge from="ter9" id="tre27" to="nter18"/>
       <!--  tre28  mwu <- noun -->
-      <edge from="nter17" id="tre28" to="nter19"/>
+      <edge from="nter19" id="tre28" to="nter17"/>
       <!--  tre29  noun <- januari -->
-      <edge from="nter19" id="tre29" to="ter10"/>
+      <edge from="ter10" id="tre29" to="nter19"/>
       <!--  tre30  mwu <- noun -->
-      <edge from="nter17" id="tre30" to="nter20"/>
+      <edge from="nter20" id="tre30" to="nter17"/>
       <!--  tre31  noun <- 1938 -->
-      <edge from="nter20" id="tre31" to="ter11"/>
+      <edge from="ter11" id="tre31" to="nter20"/>
       <!--  tre32  smain <- verb -->
-      <edge from="nter5" id="tre32" to="nter21"/>
+      <edge from="nter21" id="tre32" to="nter5" head="yes"/>
       <!--  tre33  verb <- is -->
-      <edge from="nter21" id="tre33" to="ter12" head="yes"/>
+      <edge from="ter12" id="tre33" to="nter21"/>
       <!--  tre34  smain <- pp -->
-      <edge from="nter5" id="tre34" to="nter22"/>
+      <edge from="nter22" id="tre34" to="nter5"/>
       <!--  tre35  pp <- prep -->
-      <edge from="nter22" id="tre35" to="nter23"/>
+      <edge from="nter23" id="tre35" to="nter22" head="yes"/>
       <!--  tre36  prep <- sinds -->
-      <edge from="nter23" id="tre36" to="ter13" head="yes"/>
+      <edge from="ter13" id="tre36" to="nter23"/>
       <!--  tre37  pp <- mwu -->
-      <edge from="nter22" id="tre37" to="nter24"/>
+      <edge from="nter24" id="tre37" to="nter22"/>
       <!--  tre38  mwu <- noun -->
-      <edge from="nter24" id="tre38" to="nter25"/>
+      <edge from="nter25" id="tre38" to="nter24"/>
       <!--  tre39  noun <- 30 -->
-      <edge from="nter25" id="tre39" to="ter14"/>
+      <edge from="ter14" id="tre39" to="nter25"/>
       <!--  tre40  mwu <- noun -->
-      <edge from="nter24" id="tre40" to="nter26"/>
+      <edge from="nter26" id="tre40" to="nter24"/>
       <!--  tre41  noun <- april -->
-      <edge from="nter26" id="tre41" to="ter15"/>
+      <edge from="ter15" id="tre41" to="nter26"/>
       <!--  tre42  mwu <- noun -->
-      <edge from="nter24" id="tre42" to="nter27"/>
+      <edge from="nter27" id="tre42" to="nter24"/>
       <!--  tre43  noun <- 1980 -->
-      <edge from="nter27" id="tre43" to="ter16"/>
+      <edge from="ter16" id="tre43" to="nter27"/>
       <!--  tre44  smain <- mwu -->
-      <edge from="nter5" id="tre44" to="nter28"/>
+      <edge from="nter28" id="tre44" to="nter5"/>
       <!--  tre45  mwu <- name -->
-      <edge from="nter28" id="tre45" to="nter29"/>
+      <edge from="nter29" id="tre45" to="nter28"/>
       <!--  tre46  name <- Koningin -->
-      <edge from="nter29" id="tre46" to="ter17"/>
+      <edge from="ter17" id="tre46" to="nter29"/>
       <!--  tre47  mwu <- name -->
-      <edge from="nter28" id="tre47" to="nter30"/>
+      <edge from="nter30" id="tre47" to="nter28"/>
       <!--  tre48  name <- der -->
-      <edge from="nter30" id="tre48" to="ter18"/>
+      <edge from="ter18" id="tre48" to="nter30"/>
       <!--  tre49  mwu <- name -->
-      <edge from="nter28" id="tre49" to="nter31"/>
+      <edge from="nter31" id="tre49" to="nter28"/>
       <!--  tre50  name <- Nederlanden -->
-      <edge from="nter31" id="tre50" to="ter19"/>
+      <edge from="ter19" id="tre50" to="nter31"/>
       <!--  tre51  top <- punct -->
-      <edge from="nter1" id="tre51" to="nter32"/>
+      <edge from="nter32" id="tre51" to="nter1"/>
       <!--  tre52  punct <- . -->
-      <edge from="nter32" id="tre52" to="ter20"/>
+      <edge from="ter20" id="tre52" to="nter32"/>
     </tree>
     <tree>
       <nt id="nter0" label="ROOT"/>
@@ -760,129 +760,129 @@
         </span>
       </t>
       <!--  tre0  ROOT <- top -->
-      <edge from="nter0" id="tre0" to="nter1"/>
+      <edge from="nter1" id="tre0" to="nter0"/>
       <!--  tre1  top <- punct -->
-      <edge from="nter1" id="tre1" to="nter2"/>
+      <edge from="nter2" id="tre1" to="nter1"/>
       <!--  tre2  punct <- , -->
-      <edge from="nter2" id="tre2" to="ter0"/>
+      <edge from="ter0" id="tre2" to="nter2"/>
       <!--  tre3  top <- conj -->
-      <edge from="nter1" id="tre3" to="nter3"/>
+      <edge from="nter3" id="tre3" to="nter1"/>
       <!--  tre4  conj <- smain -->
-      <edge from="nter3" id="tre4" to="nter4"/>
+      <edge from="nter4" id="tre4" to="nter3"/>
       <!--  tre5  smain <- pron -->
-      <edge from="nter4" id="tre5" to="nter5"/>
+      <edge from="nter5" id="tre5" to="nter4"/>
       <!--  tre6  pron <- Zij -->
-      <edge from="nter5" id="tre6" to="ter1"/>
+      <edge from="ter1" id="tre6" to="nter5"/>
       <!--  tre7  smain <- verb -->
-      <edge from="nter4" id="tre7" to="nter6"/>
+      <edge from="nter6" id="tre7" to="nter4" head="yes"/>
       <!--  tre8  verb <- regeert -->
-      <edge from="nter6" id="tre8" to="ter2" head="yes"/>
+      <edge from="ter2" id="tre8" to="nter6"/>
       <!--  tre9  smain <- pp -->
-      <edge from="nter4" id="tre9" to="nter7"/>
+      <edge from="nter7" id="tre9" to="nter4"/>
       <!--  tre10  pp <- prep -->
-      <edge from="nter7" id="tre10" to="nter8"/>
+      <edge from="nter8" id="tre10" to="nter7" head="yes"/>
       <!--  tre11  prep <- onder -->
-      <edge from="nter8" id="tre11" to="ter3" head="yes"/>
+      <edge from="ter3" id="tre11" to="nter8"/>
       <!--  tre12  pp <- np -->
-      <edge from="nter7" id="tre12" to="nter9"/>
+      <edge from="nter9" id="tre12" to="nter7"/>
       <!--  tre13  np <- det -->
-      <edge from="nter9" id="tre13" to="nter10"/>
+      <edge from="nter10" id="tre13" to="nter9"/>
       <!--  tre14  det <- de -->
-      <edge from="nter10" id="tre14" to="ter4"/>
+      <edge from="ter4" id="tre14" to="nter10"/>
       <!--  tre15  np <- noun -->
-      <edge from="nter9" id="tre15" to="nter11"/>
+      <edge from="nter11" id="tre15" to="nter9" head="yes"/>
       <!--  tre16  noun <- naam -->
-      <edge from="nter11" id="tre16" to="ter5" head="yes"/>
+      <edge from="ter5" id="tre16" to="nter11"/>
       <!--  tre17  np <- name -->
-      <edge from="nter9" id="tre17" to="nter12"/>
+      <edge from="nter12" id="tre17" to="nter9"/>
       <!--  tre18  name <- Beatrix -->
-      <edge from="nter12" id="tre18" to="ter6"/>
+      <edge from="ter6" id="tre18" to="nter12"/>
       <!--  tre19  conj <- vg -->
-      <edge from="nter3" id="tre19" to="nter13"/>
+      <edge from="nter13" id="tre19" to="nter3"/>
       <!--  tre20  vg <- en -->
-      <edge from="nter13" id="tre20" to="ter7"/>
+      <edge from="ter7" id="tre20" to="nter13"/>
       <!--  tre21  conj <- smain -->
-      <edge from="nter3" id="tre21" to="nter14"/>
+      <edge from="nter14" id="tre21" to="nter3"/>
       <!--  tre22  smain <- verb -->
-      <edge from="nter14" id="tre22" to="nter15"/>
+      <edge from="nter15" id="tre22" to="nter14" head="yes"/>
       <!--  tre23  verb <- draagt -->
-      <edge from="nter15" id="tre23" to="ter8" head="yes"/>
+      <edge from="ter8" id="tre23" to="nter15"/>
       <!--  tre24  smain <- np -->
-      <edge from="nter14" id="tre24" to="nter16"/>
+      <edge from="nter16" id="tre24" to="nter14"/>
       <!--  tre25  np <- mwu -->
-      <edge from="nter16" id="tre25" to="nter17"/>
+      <edge from="nter17" id="tre25" to="nter16"/>
       <!--  tre26  mwu <- adv -->
-      <edge from="nter17" id="tre26" to="nter18"/>
+      <edge from="nter18" id="tre26" to="nter17"/>
       <!--  tre27  adv <- onder -->
-      <edge from="nter18" id="tre27" to="ter9"/>
+      <edge from="ter9" id="tre27" to="nter18"/>
       <!--  tre28  mwu <- adv -->
-      <edge from="nter17" id="tre28" to="nter19"/>
+      <edge from="nter19" id="tre28" to="nter17"/>
       <!--  tre29  adv <- meer -->
-      <edge from="nter19" id="tre29" to="ter10"/>
+      <edge from="ter10" id="tre29" to="nter19"/>
       <!--  tre30  np <- det -->
-      <edge from="nter16" id="tre30" to="nter20"/>
+      <edge from="nter20" id="tre30" to="nter16"/>
       <!--  tre31  det <- de -->
-      <edge from="nter20" id="tre31" to="ter11"/>
+      <edge from="ter11" id="tre31" to="nter20"/>
       <!--  tre32  np <- noun -->
-      <edge from="nter16" id="tre32" to="nter21"/>
+      <edge from="nter21" id="tre32" to="nter16" head="yes"/>
       <!--  tre33  noun <- titels -->
-      <edge from="nter21" id="tre33" to="ter12" head="yes"/>
+      <edge from="ter12" id="tre33" to="nter21"/>
       <!--  tre34  np <- noun -->
-      <edge from="nter16" id="tre34" to="nter22"/>
+      <edge from="nter22" id="tre34" to="nter16"/>
       <!--  tre35  noun <- prinses -->
-      <edge from="nter22" id="tre35" to="ter13"/>
+      <edge from="ter13" id="tre35" to="nter22"/>
       <!--  tre36  np <- pp -->
-      <edge from="nter16" id="tre36" to="nter23"/>
+      <edge from="nter23" id="tre36" to="nter16"/>
       <!--  tre37  pp <- prep -->
-      <edge from="nter23" id="tre37" to="nter24"/>
+      <edge from="nter24" id="tre37" to="nter23" head="yes"/>
       <!--  tre38  prep <- van -->
-      <edge from="nter24" id="tre38" to="ter14" head="yes"/>
+      <edge from="ter14" id="tre38" to="nter24"/>
       <!--  tre39  pp <- conj -->
-      <edge from="nter23" id="tre39" to="nter25"/>
+      <edge from="nter25" id="tre39" to="nter23"/>
       <!--  tre40  conj <- name -->
-      <edge from="nter25" id="tre40" to="nter26"/>
+      <edge from="nter26" id="tre40" to="nter25"/>
       <!--  tre41  name <- Oranje-Nassau -->
-      <edge from="nter26" id="tre41" to="ter15"/>
+      <edge from="ter15" id="tre41" to="nter26"/>
       <!--  tre42  conj <- np -->
-      <edge from="nter25" id="tre42" to="nter27"/>
+      <edge from="nter27" id="tre42" to="nter25"/>
       <!--  tre43  np <- noun -->
-      <edge from="nter27" id="tre43" to="nter28"/>
+      <edge from="nter28" id="tre43" to="nter27" head="yes"/>
       <!--  tre44  noun <- prinses -->
-      <edge from="nter28" id="tre44" to="ter16" head="yes"/>
+      <edge from="ter16" id="tre44" to="nter28"/>
       <!--  tre45  np <- np -->
-      <edge from="nter27" id="tre45" to="nter29"/>
+      <edge from="nter29" id="tre45" to="nter27"/>
       <!--  tre46  np <- det -->
-      <edge from="nter29" id="tre46" to="nter30"/>
+      <edge from="nter30" id="tre46" to="nter29"/>
       <!--  tre47  det <- der -->
-      <edge from="nter30" id="tre47" to="ter17"/>
+      <edge from="ter17" id="tre47" to="nter30"/>
       <!--  tre48  np <- name -->
-      <edge from="nter29" id="tre48" to="nter31"/>
+      <edge from="nter31" id="tre48" to="nter29" head="yes"/>
       <!--  tre49  name <- Nederlanden -->
-      <edge from="nter31" id="tre49" to="ter18" head="yes"/>
+      <edge from="ter18" id="tre49" to="nter31"/>
       <!--  tre50  conj <- vg -->
-      <edge from="nter25" id="tre50" to="nter32"/>
+      <edge from="nter32" id="tre50" to="nter25"/>
       <!--  tre51  vg <- en -->
-      <edge from="nter32" id="tre51" to="ter19"/>
+      <edge from="ter19" id="tre51" to="nter32"/>
       <!--  tre52  conj <- np -->
-      <edge from="nter25" id="tre52" to="nter33"/>
+      <edge from="nter33" id="tre52" to="nter25"/>
       <!--  tre53  np <- noun -->
-      <edge from="nter33" id="tre53" to="nter34"/>
+      <edge from="nter34" id="tre53" to="nter33" head="yes"/>
       <!--  tre54  noun <- prinses -->
-      <edge from="nter34" id="tre54" to="ter20" head="yes"/>
+      <edge from="ter20" id="tre54" to="nter34"/>
       <!--  tre55  np <- pp -->
-      <edge from="nter33" id="tre55" to="nter35"/>
+      <edge from="nter35" id="tre55" to="nter33"/>
       <!--  tre56  pp <- prep -->
-      <edge from="nter35" id="tre56" to="nter36"/>
+      <edge from="nter36" id="tre56" to="nter35" head="yes"/>
       <!--  tre57  prep <- van -->
-      <edge from="nter36" id="tre57" to="ter21" head="yes"/>
+      <edge from="ter21" id="tre57" to="nter36"/>
       <!--  tre58  pp <- name -->
-      <edge from="nter35" id="tre58" to="nter37"/>
+      <edge from="nter37" id="tre58" to="nter35"/>
       <!--  tre59  name <- Lippe-Biesterfeld -->
-      <edge from="nter37" id="tre59" to="ter22"/>
+      <edge from="ter22" id="tre59" to="nter37"/>
       <!--  tre60  top <- punct -->
-      <edge from="nter1" id="tre60" to="nter38"/>
+      <edge from="nter38" id="tre60" to="nter1"/>
       <!--  tre61  punct <- . -->
-      <edge from="nter38" id="tre61" to="ter23"/>
+      <edge from="ter23" id="tre61" to="nter38"/>
     </tree>
     <tree>
       <nt id="nter0" label="ROOT"/>
@@ -960,63 +960,63 @@
         </span>
       </t>
       <!--  tre0  ROOT <- top -->
-      <edge from="nter0" id="tre0" to="nter1"/>
+      <edge from="nter1" id="tre0" to="nter0"/>
       <!--  tre1  top <- smain -->
-      <edge from="nter1" id="tre1" to="nter2"/>
+      <edge from="nter2" id="tre1" to="nter1"/>
       <!--  tre2  smain <- name -->
-      <edge from="nter2" id="tre2" to="nter3"/>
+      <edge from="nter3" id="tre2" to="nter2"/>
       <!--  tre3  name <- Beatrix -->
-      <edge from="nter3" id="tre3" to="ter0"/>
+      <edge from="ter0" id="tre3" to="nter3"/>
       <!--  tre4  smain <- verb -->
-      <edge from="nter2" id="tre4" to="nter4"/>
+      <edge from="nter4" id="tre4" to="nter2" head="yes"/>
       <!--  tre5  verb <- is -->
-      <edge from="nter4" id="tre5" to="ter1" head="yes"/>
+      <edge from="ter1" id="tre5" to="nter4"/>
       <!--  tre6  smain <- pp -->
-      <edge from="nter2" id="tre6" to="nter5"/>
+      <edge from="nter5" id="tre6" to="nter2"/>
       <!--  tre7  pp <- prep -->
-      <edge from="nter5" id="tre7" to="nter6"/>
+      <edge from="nter6" id="tre7" to="nter5" head="yes"/>
       <!--  tre8  prep <- sinds -->
-      <edge from="nter6" id="tre8" to="ter2" head="yes"/>
+      <edge from="ter2" id="tre8" to="nter6"/>
       <!--  tre9  pp <- noun -->
-      <edge from="nter5" id="tre9" to="nter7"/>
+      <edge from="nter7" id="tre9" to="nter5"/>
       <!--  tre10  noun <- 2002 -->
-      <edge from="nter7" id="tre10" to="ter3"/>
+      <edge from="ter3" id="tre10" to="nter7"/>
       <!--  tre11  smain <- np -->
-      <edge from="nter2" id="tre11" to="nter8"/>
+      <edge from="nter8" id="tre11" to="nter2"/>
       <!--  tre12  np <- noun -->
-      <edge from="nter8" id="tre12" to="nter9"/>
+      <edge from="nter9" id="tre12" to="nter8" head="yes"/>
       <!--  tre13  noun <- weduwe -->
-      <edge from="nter9" id="tre13" to="ter4" head="yes"/>
+      <edge from="ter4" id="tre13" to="nter9"/>
       <!--  tre14  np <- pp -->
-      <edge from="nter8" id="tre14" to="nter10"/>
+      <edge from="nter10" id="tre14" to="nter8"/>
       <!--  tre15  pp <- prep -->
-      <edge from="nter10" id="tre15" to="nter11"/>
+      <edge from="nter11" id="tre15" to="nter10" head="yes"/>
       <!--  tre16  prep <- van -->
-      <edge from="nter11" id="tre16" to="ter5" head="yes"/>
+      <edge from="ter5" id="tre16" to="nter11"/>
       <!--  tre17  pp <- np -->
-      <edge from="nter10" id="tre17" to="nter12"/>
+      <edge from="nter12" id="tre17" to="nter10"/>
       <!--  tre18  np <- noun -->
-      <edge from="nter12" id="tre18" to="nter13"/>
+      <edge from="nter13" id="tre18" to="nter12" head="yes"/>
       <!--  tre19  noun <- prins -->
-      <edge from="nter13" id="tre19" to="ter6" head="yes"/>
+      <edge from="ter6" id="tre19" to="nter13"/>
       <!--  tre20  np <- name -->
-      <edge from="nter12" id="tre20" to="nter14"/>
+      <edge from="nter14" id="tre20" to="nter12"/>
       <!--  tre21  name <- Claus -->
-      <edge from="nter14" id="tre21" to="ter7"/>
+      <edge from="ter7" id="tre21" to="nter14"/>
       <!--  tre22  np <- pp -->
-      <edge from="nter12" id="tre22" to="nter15"/>
+      <edge from="nter15" id="tre22" to="nter12"/>
       <!--  tre23  pp <- prep -->
-      <edge from="nter15" id="tre23" to="nter16"/>
+      <edge from="nter16" id="tre23" to="nter15" head="yes"/>
       <!--  tre24  prep <- van -->
-      <edge from="nter16" id="tre24" to="ter8" head="yes"/>
+      <edge from="ter8" id="tre24" to="nter16"/>
       <!--  tre25  pp <- name -->
-      <edge from="nter15" id="tre25" to="nter17"/>
+      <edge from="nter17" id="tre25" to="nter15"/>
       <!--  tre26  name <- Amsberg -->
-      <edge from="nter17" id="tre26" to="ter9"/>
+      <edge from="ter9" id="tre26" to="nter17"/>
       <!--  tre27  top <- punct -->
-      <edge from="nter1" id="tre27" to="nter18"/>
+      <edge from="nter18" id="tre27" to="nter1"/>
       <!--  tre28  punct <- . -->
-      <edge from="nter18" id="tre28" to="ter10"/>
+      <edge from="ter10" id="tre28" to="nter18"/>
     </tree>
   </constituency>
 </KAF>

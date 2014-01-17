@@ -77,15 +77,20 @@ def convert_penn_to_kaf_with_numtokens(tree_str,term_ids,logging,lemma_for_termi
         root.append(ele)
         
     ##Edges
-    for edge_id,node_to,node_from in list_edge:
+    #for edge_id,node_to,node_from in list_edge:
+    for edge_id, node_from, node_to in list_edge:
         ele = etree.Element('edge',attrib={'id':edge_id,'from':node_from,'to':node_to})
         
         ## For the comment
-        label_from = labels_for_nt.get(node_from,'unknown')
+        ##Only non-ter
         label_to = labels_for_nt.get(node_to)
-        if label_to is None: label_to = lemma_for_ter.get(node_to,'unknown')
-        #comment = '  '+str(edge_id)+'  '+str(label_from)+' <- '+str(label_to)+' '
-        comment = '  '+(edge_id)+'  '+(label_from)+' <- '+(label_to)+' '
+        
+        ##Could be ter or nonter
+        label_from = labels_for_nt.get(node_from)
+        if label_from is None:
+            label_from = lemma_for_ter.get(node_from,'kk')
+                                        
+        comment = '  '+(edge_id)+'  '+(label_to)+' <- '+(label_from)+' '
         
         if node_from in nonter_heads:
             ele.set('head','yes')

@@ -6,7 +6,7 @@
       <lp timestamp="*" version="1.0" name="Open-nlp tokenizer"/>
     </linguisticProcessors>
     <linguisticProcessor layer="constituents">
-      <lp timestamp="*" version="1.2_17Jan2014" name="alpino kaf constituency parser"/>
+      <lp timestamp="*" version="1.3_17Jan2014" name="alpino kaf constituency parser"/>
     </linguisticProcessor>
     <linguisticProcessor layer="term">
       <lp timestamp="2013-12-20T17:47:28CET" version="1.0" name="Open nlp pos tagger"/>
@@ -132,37 +132,37 @@
         </span>
       </t>
       <!--  tre0  ROOT <- top -->
-      <edge from="nter0" id="tre0" to="nter1"/>
+      <edge from="nter1" id="tre0" to="nter0"/>
       <!--  tre1  top <- smain -->
-      <edge from="nter1" id="tre1" to="nter2"/>
+      <edge from="nter2" id="tre1" to="nter1"/>
       <!--  tre2  smain <- np -->
-      <edge from="nter2" id="tre2" to="nter3"/>
+      <edge from="nter3" id="tre2" to="nter2"/>
       <!--  tre3  np <- det -->
-      <edge from="nter3" id="tre3" to="nter4"/>
+      <edge from="nter4" id="tre3" to="nter3"/>
       <!--  tre4  det <- Mijn -->
-      <edge from="nter4" id="tre4" to="ter0"/>
+      <edge from="ter0" id="tre4" to="nter4"/>
       <!--  tre5  np <- noun -->
-      <edge from="nter3" id="tre5" to="nter5"/>
+      <edge from="nter5" id="tre5" to="nter3" head="yes"/>
       <!--  tre6  noun <- hond -->
-      <edge from="nter5" id="tre6" to="ter1" head="yes"/>
+      <edge from="ter1" id="tre6" to="nter5"/>
       <!--  tre7  smain <- verb -->
-      <edge from="nter2" id="tre7" to="nter6"/>
+      <edge from="nter6" id="tre7" to="nter2" head="yes"/>
       <!--  tre8  verb <- is -->
-      <edge from="nter6" id="tre8" to="ter2" head="yes"/>
+      <edge from="ter2" id="tre8" to="nter6"/>
       <!--  tre9  smain <- ap -->
-      <edge from="nter2" id="tre9" to="nter7"/>
+      <edge from="nter7" id="tre9" to="nter2"/>
       <!--  tre10  ap <- adj -->
-      <edge from="nter7" id="tre10" to="nter8"/>
+      <edge from="nter8" id="tre10" to="nter7"/>
       <!--  tre11  adj <- erg -->
-      <edge from="nter8" id="tre11" to="ter3"/>
+      <edge from="ter3" id="tre11" to="nter8"/>
       <!--  tre12  ap <- adj -->
-      <edge from="nter7" id="tre12" to="nter9"/>
+      <edge from="nter9" id="tre12" to="nter7" head="yes"/>
       <!--  tre13  adj <- mooi -->
-      <edge from="nter9" id="tre13" to="ter4" head="yes"/>
+      <edge from="ter4" id="tre13" to="nter9"/>
       <!--  tre14  top <- punct -->
-      <edge from="nter1" id="tre14" to="nter10"/>
+      <edge from="nter10" id="tre14" to="nter1"/>
       <!--  tre15  punct <- . -->
-      <edge from="nter10" id="tre15" to="ter5"/>
+      <edge from="ter5" id="tre15" to="nter10"/>
     </tree>
     <tree>
       <nt id="nter0" label="ROOT"/>
@@ -207,37 +207,37 @@
         </span>
       </t>
       <!--  tre0  ROOT <- top -->
-      <edge from="nter0" id="tre0" to="nter1"/>
+      <edge from="nter1" id="tre0" to="nter0"/>
       <!--  tre1  top <- smain -->
-      <edge from="nter1" id="tre1" to="nter2"/>
+      <edge from="nter2" id="tre1" to="nter1"/>
       <!--  tre2  smain <- np -->
-      <edge from="nter2" id="tre2" to="nter3"/>
+      <edge from="nter3" id="tre2" to="nter2"/>
       <!--  tre3  np <- det -->
-      <edge from="nter3" id="tre3" to="nter4"/>
+      <edge from="nter4" id="tre3" to="nter3"/>
       <!--  tre4  det <- Mijn -->
-      <edge from="nter4" id="tre4" to="ter0"/>
+      <edge from="ter0" id="tre4" to="nter4"/>
       <!--  tre5  np <- noun -->
-      <edge from="nter3" id="tre5" to="nter5"/>
+      <edge from="nter5" id="tre5" to="nter3" head="yes"/>
       <!--  tre6  noun <- huis -->
-      <edge from="nter5" id="tre6" to="ter1" head="yes"/>
+      <edge from="ter1" id="tre6" to="nter5"/>
       <!--  tre7  smain <- verb -->
-      <edge from="nter2" id="tre7" to="nter6"/>
+      <edge from="nter6" id="tre7" to="nter2" head="yes"/>
       <!--  tre8  verb <- is -->
-      <edge from="nter6" id="tre8" to="ter2" head="yes"/>
+      <edge from="ter2" id="tre8" to="nter6"/>
       <!--  tre9  smain <- ap -->
-      <edge from="nter2" id="tre9" to="nter7"/>
+      <edge from="nter7" id="tre9" to="nter2"/>
       <!--  tre10  ap <- adj -->
-      <edge from="nter7" id="tre10" to="nter8"/>
+      <edge from="nter8" id="tre10" to="nter7"/>
       <!--  tre11  adj <- erg -->
-      <edge from="nter8" id="tre11" to="ter3"/>
+      <edge from="ter3" id="tre11" to="nter8"/>
       <!--  tre12  ap <- adj -->
-      <edge from="nter7" id="tre12" to="nter9"/>
+      <edge from="nter9" id="tre12" to="nter7" head="yes"/>
       <!--  tre13  adj <- mooi -->
-      <edge from="nter9" id="tre13" to="ter4" head="yes"/>
+      <edge from="ter4" id="tre13" to="nter9"/>
       <!--  tre14  top <- punct -->
-      <edge from="nter1" id="tre14" to="nter10"/>
+      <edge from="nter10" id="tre14" to="nter1"/>
       <!--  tre15  punct <- . -->
-      <edge from="nter10" id="tre15" to="ter5"/>
+      <edge from="ter5" id="tre15" to="nter10"/>
     </tree>
   </constituency>
 </KAF>
