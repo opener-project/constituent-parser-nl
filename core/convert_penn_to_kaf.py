@@ -21,8 +21,16 @@ tree_node = create_constituency_layer(s, ids)
 e = etree.ElementTree(element=tree_node)
 e.write(sys.stdout,pretty_print=True)
 '''
+
+list_t = []
+list_nt = []
+list_edge = []
+
 def convert_penn_to_kaf_with_numtokens(tree_str,term_ids,logging,lemma_for_termid):
-    global NOTER, TER, EDGE, noter_cnt,ter_cnt,edge_cnt
+    global list_t, list_nt,list_edge
+    list_t = []
+    list_nt = []
+    list_edge = []
 
     this_tree = Tree(tree_str)
     logging.debug('\n'+str(this_tree))    ##It has been already encoded using iso-8859-1
@@ -36,90 +44,103 @@ def convert_penn_to_kaf_with_numtokens(tree_str,term_ids,logging,lemma_for_termi
         this_tree[position] = token_id
         logging.debug('Matching '+num_token_and_token+' with term id='+token_id+'  according to KAF lemma='+str(lemma_for_termid.get(token_id).encode('utf-8')))
 
+    ##Creat the ROOT
+    num_nt = len(list_nt)
+    nt_id = 'nter'+str(num_nt)
+    list_nt.append((nt_id,'ROOT'))
     
-
-    ## TO include a root node
-    include_extra_root = False
-    if include_extra_root:
-        my_noter_root_id = 'nter'+str(noter_cnt)
-        noter_cnt+=1
-        my_edge_root_id = 'tre'+str(edge_cnt)
-        edge_cnt+=1
-    
-    linking_id, nodes = generate_nodes(this_tree)
-    
-    if include_extra_root:
-        ## TO include a root node
-        my_noter  = (NOTER,my_noter_root_id,'ROOT')
-        my_edge = (EDGE,my_edge_root_id,my_noter_root_id,linking_id)
-        nodes.insert(0,my_noter)
-        nodes.insert(0,my_edge)
-    
-    
-   
-    ## non terminals
-    nonter_nodes = []
-    edges_nodes=  []
-    ter_nodes = []
-    nonter_heads = set()
-    for n in nodes:
-        if n[0] == NOTER:            
-            _,nonter_id,label = n
-            ##Checking the head
-            if len(label)>=2 and label[-1]=='H' and label[-2]=='=':
-                nonter_heads.add(nonter_id)
-                label = label[:-2]
-            ele = etree.Element('nt', attrib={'id':nonter_id,'label':label})
-            nonter_nodes.append(ele)
-        elif n[0] == EDGE:
-            _,edge_id,node_to,node_from = n
-            ele = etree.Element('edge',attrib={'id':edge_id,'from':node_from,'to':node_to})
-            edges_nodes.append(ele)
-        elif n[0] == TER:
-            _,ter_id,span_ids = n
-            ele = etree.Element('t',attrib={'id':ter_id})
-            span = etree.Element('span')
-            ele.append(span)
-            for termid in span_ids.split(' '):
-                target = etree.Element('target',attrib={'id':termid})
-                span.append(target)
-            ter_nodes.append(ele)
-            
+    visit_node(this_tree, nt_id)
+ 
     root = etree.Element('tree')
-    for nt in nonter_nodes:
-        root.append(nt)
+    nonter_heads = set()
+    #Nonter
+    labels_for_nt = {}
+    for nt_id, label in list_nt:
+        ##Checking the head
+        if len(label)>=2 and label[-1]=='H' and label[-2]=='=':
+            nonter_heads.add(nt_id)
+            label = label[:-2]
+        ele = etree.Element('nt', attrib={'id':nt_id,'label':label})
+        labels_for_nt[nt_id] = label
+        root.append(ele)
     
-    for t in ter_nodes:
-        root.append(t)
+    ## Terminals
+    lemma_for_ter = {}
+    for ter_id, span_ids in list_t:
+        ele = etree.Element('t',attrib={'id':ter_id})
+        span = etree.Element('span')
+        ele.append(span)
+        for termid in span_ids.split(' '):
+            target = etree.Element('target',attrib={'id':termid})
+            span.append(target)
+        lemma_for_ter[ter_id] = lemma_for_termid[termid]
+        root.append(ele)
         
-    for ed in edges_nodes:
-        if ed.get('from') in nonter_heads:
-            ed.set('head','yes')
-        root.append(ed)        
+    ##Edges
+    for edge_id,node_to,node_from in list_edge:
+        ele = etree.Element('edge',attrib={'id':edge_id,'from':node_from,'to':node_to})
+        
+        ## For the comment
+        label_from = labels_for_nt.get(node_from,'unknown')
+        label_to = labels_for_nt.get(node_to)
+        if label_to is None: label_to = lemma_for_ter.get(node_to,'unknown')
+        #comment = '  '+str(edge_id)+'  '+str(label_from)+' <- '+str(label_to)+' '
+        comment = '  '+(edge_id)+'  '+(label_from)+' <- '+(label_to)+' '
+        
+        if node_from in nonter_heads:
+            ele.set('head','yes')
+        root.append(etree.Comment(comment))
+        root.append(ele)
+    
     return root
         
-##This is the recursive function to generate all the nodes behind a node
-## It will generate all the terminal, non-terminal and edges nodes
-def generate_nodes(node):
-    global NOTER, TER, EDGE, noter_cnt,ter_cnt,edge_cnt
-    if isinstance(node, str):  ## is a leaf
-        # This is just a text (a token id)
-        my_ter_id = "ter"+str(ter_cnt)
-        ter_cnt+=1
-        my_ter = (TER,my_ter_id,str(node))
-        return my_ter_id,[my_ter]
-    else:
-        nodes = []
-        my_nonter_id = 'nter'+str(noter_cnt)
-        noter_cnt+=1
-        my_nonter = (NOTER,my_nonter_id,node.node)
-        nodes.append(my_nonter)
+
+
+def visit_node(node,id_parent=None):
+    global list_t, list_nt,list_edge
+    if isinstance(node,str): #is a terminal
+        ##Create the terminal
+        num_t = len(list_t)
+        t_id = 'ter'+str(num_t)
+        list_t.append((t_id,str(node)))
         
+        ##Create the edge with the parent
+        num_edges = len(list_edge)
+        edge_id = 'tre'+str(num_edges)
+        list_edge.append((edge_id,t_id,id_parent))
+    else:  #Is a non terminal
+        ##Create the nonterminal
+        num_nt = len(list_nt)
+        nt_id = 'nter'+str(num_nt)
+        list_nt.append((nt_id,node.node))
+        
+        ##Create the linking with the parent
+        if id_parent is not None:
+            num_edges = len(list_edge)
+            edge_id = 'tre'+str(num_edges)
+            list_edge.append((edge_id,nt_id,id_parent))
+        
+        ##Call to the child
         for child in node:
-            linking_id, subnodes = generate_nodes(child)
-            nodes.extend(subnodes) 
-            my_edge_id = 'tre'+str(edge_cnt)
-            edge_cnt += 1
-            my_edge = (EDGE,my_edge_id,my_nonter_id,linking_id)
-            nodes.append(my_edge)
-        return my_nonter_id,nodes
+            visit_node(child,nt_id)
+            
+        
+    
+if __name__ == '__main__':
+    s = "(S (NP (DET 0#The) (NN 1#dog)) (VP (V 2#ate) (NP (DET 3#the) (NN 4#cat))) (. 5#.))"
+    ids = ['t0' ,'t1','t2','t3','t4','t5']
+    t= {}
+    t['t0']='The'
+    t['t1']='dog'
+    t['t2']='ate'
+    t['t3']='the'
+    t['t4']='cat'
+    t['t5']='.'
+    root = convert_penn_to_kaf_with_numtokens(s,ids,None,t)
+    import sys
+    etree.ElementTree(element=root).write(sys.stdout,pretty_print=1)
+
+
+
+    
+    

@@ -19,8 +19,8 @@ from convert_penn_to_kaf import convert_penn_to_kaf_with_numtokens
 #       so the label "begin" in the xml is used to know which is the number of token of each <node>
 
 
-last_modified='15jan2014'
-version="1.1"
+last_modified='17Jan2014'
+version="1.2"
 this_name = 'alpino kaf constituency parser'
 this_layer = 'constituents'
 
@@ -69,8 +69,6 @@ def xml_to_penn(filename):
   tree = etree.parse(filename)
   str = node_to_penn(tree.find('node'))
   return str
-
-            
 
 if not sys.stdin.isatty(): 
     ## READING FROM A PIPE
