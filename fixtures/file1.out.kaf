@@ -90,17 +90,16 @@
   </terms>
   <constituency>
     <tree>
-      <nt id="nter0" label="ROOT"/>
-      <nt id="nter1" label="top"/>
-      <nt id="nter2" label="smain"/>
-      <nt id="nter3" label="np"/>
-      <nt id="nter4" label="det"/>
-      <nt id="nter5" label="noun"/>
-      <nt id="nter6" label="verb"/>
-      <nt id="nter7" label="ap"/>
+      <nt id="nter0" label="top"/>
+      <nt id="nter1" label="smain"/>
+      <nt id="nter2" label="np"/>
+      <nt id="nter3" label="det"/>
+      <nt id="nter4" label="noun"/>
+      <nt id="nter5" label="verb"/>
+      <nt id="nter6" label="ap"/>
+      <nt id="nter7" label="adj"/>
       <nt id="nter8" label="adj"/>
-      <nt id="nter9" label="adj"/>
-      <nt id="nter10" label="punct"/>
+      <nt id="nter9" label="punct"/>
       <t id="ter0">
         <span>
           <target id="t1"/>
@@ -131,113 +130,108 @@
           <target id="t6"/>
         </span>
       </t>
-      <!--  tre0  ROOT <- top -->
+      <!--  tre0  top <- smain -->
       <edge from="nter1" id="tre0" to="nter0"/>
-      <!--  tre1  top <- smain -->
+      <!--  tre1  smain <- np -->
       <edge from="nter2" id="tre1" to="nter1"/>
-      <!--  tre2  smain <- np -->
+      <!--  tre2  np <- det -->
       <edge from="nter3" id="tre2" to="nter2"/>
-      <!--  tre3  np <- det -->
-      <edge from="nter4" id="tre3" to="nter3"/>
-      <!--  tre4  det <- Mijn -->
-      <edge from="ter0" id="tre4" to="nter4"/>
-      <!--  tre5  np <- noun -->
-      <edge from="nter5" id="tre5" to="nter3" head="yes"/>
-      <!--  tre6  noun <- hond -->
-      <edge from="ter1" id="tre6" to="nter5"/>
-      <!--  tre7  smain <- verb -->
-      <edge from="nter6" id="tre7" to="nter2" head="yes"/>
-      <!--  tre8  verb <- is -->
-      <edge from="ter2" id="tre8" to="nter6"/>
-      <!--  tre9  smain <- ap -->
-      <edge from="nter7" id="tre9" to="nter2"/>
-      <!--  tre10  ap <- adj -->
-      <edge from="nter8" id="tre10" to="nter7"/>
-      <!--  tre11  adj <- erg -->
-      <edge from="ter3" id="tre11" to="nter8"/>
-      <!--  tre12  ap <- adj -->
-      <edge from="nter9" id="tre12" to="nter7" head="yes"/>
-      <!--  tre13  adj <- mooi -->
-      <edge from="ter4" id="tre13" to="nter9"/>
-      <!--  tre14  top <- punct -->
-      <edge from="nter10" id="tre14" to="nter1"/>
-      <!--  tre15  punct <- . -->
-      <edge from="ter5" id="tre15" to="nter10"/>
+      <!--  tre3  det <- Mijn -->
+      <edge from="ter0" id="tre3" to="nter3"/>
+      <!--  tre4  np <- noun -->
+      <edge from="nter4" id="tre4" to="nter2" head="yes"/>
+      <!--  tre5  noun <- hond -->
+      <edge from="ter1" id="tre5" to="nter4"/>
+      <!--  tre6  smain <- verb -->
+      <edge from="nter5" id="tre6" to="nter1" head="yes"/>
+      <!--  tre7  verb <- is -->
+      <edge from="ter2" id="tre7" to="nter5"/>
+      <!--  tre8  smain <- ap -->
+      <edge from="nter6" id="tre8" to="nter1"/>
+      <!--  tre9  ap <- adj -->
+      <edge from="nter7" id="tre9" to="nter6"/>
+      <!--  tre10  adj <- erg -->
+      <edge from="ter3" id="tre10" to="nter7"/>
+      <!--  tre11  ap <- adj -->
+      <edge from="nter8" id="tre11" to="nter6" head="yes"/>
+      <!--  tre12  adj <- mooi -->
+      <edge from="ter4" id="tre12" to="nter8"/>
+      <!--  tre13  top <- punct -->
+      <edge from="nter9" id="tre13" to="nter0"/>
+      <!--  tre14  punct <- . -->
+      <edge from="ter5" id="tre14" to="nter9"/>
     </tree>
     <tree>
-      <nt id="nter0" label="ROOT"/>
-      <nt id="nter1" label="top"/>
-      <nt id="nter2" label="smain"/>
-      <nt id="nter3" label="np"/>
-      <nt id="nter4" label="det"/>
-      <nt id="nter5" label="noun"/>
-      <nt id="nter6" label="verb"/>
-      <nt id="nter7" label="ap"/>
-      <nt id="nter8" label="adj"/>
-      <nt id="nter9" label="adj"/>
-      <nt id="nter10" label="punct"/>
-      <t id="ter0">
+      <nt id="nter10" label="top"/>
+      <nt id="nter11" label="smain"/>
+      <nt id="nter12" label="np"/>
+      <nt id="nter13" label="det"/>
+      <nt id="nter14" label="noun"/>
+      <nt id="nter15" label="verb"/>
+      <nt id="nter16" label="ap"/>
+      <nt id="nter17" label="adj"/>
+      <nt id="nter18" label="adj"/>
+      <nt id="nter19" label="punct"/>
+      <t id="ter6">
         <span>
           <target id="t7"/>
         </span>
       </t>
-      <t id="ter1">
+      <t id="ter7">
         <span>
           <target id="t8"/>
         </span>
       </t>
-      <t id="ter2">
+      <t id="ter8">
         <span>
           <target id="t9"/>
         </span>
       </t>
-      <t id="ter3">
+      <t id="ter9">
         <span>
           <target id="t10"/>
         </span>
       </t>
-      <t id="ter4">
+      <t id="ter10">
         <span>
           <target id="t11"/>
         </span>
       </t>
-      <t id="ter5">
+      <t id="ter11">
         <span>
           <target id="t12"/>
         </span>
       </t>
-      <!--  tre0  ROOT <- top -->
-      <edge from="nter1" id="tre0" to="nter0"/>
-      <!--  tre1  top <- smain -->
-      <edge from="nter2" id="tre1" to="nter1"/>
-      <!--  tre2  smain <- np -->
-      <edge from="nter3" id="tre2" to="nter2"/>
-      <!--  tre3  np <- det -->
-      <edge from="nter4" id="tre3" to="nter3"/>
-      <!--  tre4  det <- Mijn -->
-      <edge from="ter0" id="tre4" to="nter4"/>
-      <!--  tre5  np <- noun -->
-      <edge from="nter5" id="tre5" to="nter3" head="yes"/>
-      <!--  tre6  noun <- huis -->
-      <edge from="ter1" id="tre6" to="nter5"/>
-      <!--  tre7  smain <- verb -->
-      <edge from="nter6" id="tre7" to="nter2" head="yes"/>
-      <!--  tre8  verb <- is -->
-      <edge from="ter2" id="tre8" to="nter6"/>
-      <!--  tre9  smain <- ap -->
-      <edge from="nter7" id="tre9" to="nter2"/>
-      <!--  tre10  ap <- adj -->
-      <edge from="nter8" id="tre10" to="nter7"/>
-      <!--  tre11  adj <- erg -->
-      <edge from="ter3" id="tre11" to="nter8"/>
-      <!--  tre12  ap <- adj -->
-      <edge from="nter9" id="tre12" to="nter7" head="yes"/>
-      <!--  tre13  adj <- mooi -->
-      <edge from="ter4" id="tre13" to="nter9"/>
-      <!--  tre14  top <- punct -->
-      <edge from="nter10" id="tre14" to="nter1"/>
-      <!--  tre15  punct <- . -->
-      <edge from="ter5" id="tre15" to="nter10"/>
+      <!--  tre15  top <- smain -->
+      <edge from="nter11" id="tre15" to="nter10"/>
+      <!--  tre16  smain <- np -->
+      <edge from="nter12" id="tre16" to="nter11"/>
+      <!--  tre17  np <- det -->
+      <edge from="nter13" id="tre17" to="nter12"/>
+      <!--  tre18  det <- Mijn -->
+      <edge from="ter6" id="tre18" to="nter13"/>
+      <!--  tre19  np <- noun -->
+      <edge from="nter14" id="tre19" to="nter12" head="yes"/>
+      <!--  tre20  noun <- huis -->
+      <edge from="ter7" id="tre20" to="nter14"/>
+      <!--  tre21  smain <- verb -->
+      <edge from="nter15" id="tre21" to="nter11" head="yes"/>
+      <!--  tre22  verb <- is -->
+      <edge from="ter8" id="tre22" to="nter15"/>
+      <!--  tre23  smain <- ap -->
+      <edge from="nter16" id="tre23" to="nter11"/>
+      <!--  tre24  ap <- adj -->
+      <edge from="nter17" id="tre24" to="nter16"/>
+      <!--  tre25  adj <- erg -->
+      <edge from="ter9" id="tre25" to="nter17"/>
+      <!--  tre26  ap <- adj -->
+      <edge from="nter18" id="tre26" to="nter16" head="yes"/>
+      <!--  tre27  adj <- mooi -->
+      <edge from="ter10" id="tre27" to="nter18"/>
+      <!--  tre28  top <- punct -->
+      <edge from="nter19" id="tre28" to="nter10"/>
+      <!--  tre29  punct <- . -->
+      <edge from="ter11" id="tre29" to="nter19"/>
     </tree>
   </constituency>
 </KAF>

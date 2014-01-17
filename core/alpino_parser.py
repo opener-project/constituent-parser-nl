@@ -163,12 +163,12 @@ alpino_pro.wait()
 const = etree.Element('constituency')
 
 #for xml_file in glob.glob(os.path.join(out_folder_alp,'*.xml')):
-
+cnt_t = cnt_nt = cnt_edge = 0
 for num_sent in range(len(sentences)):
   xml_file = os.path.join(out_folder_alp,str(num_sent+1)+'.xml')    
   logging.debug('Converting alpino XML to pennTreebank, sentence num '+str(num_sent+1))
   penn_str = xml_to_penn(xml_file)
-  tree_node = convert_penn_to_kaf_with_numtokens(penn_str,term_ids[num_sent],logging,lemma_for_termid)
+  tree_node,cnt_t,cnt_nt,cnt_edge = convert_penn_to_kaf_with_numtokens(penn_str,term_ids[num_sent],logging,lemma_for_termid,cnt_t,cnt_nt,cnt_edge)
   const.append(tree_node)
 
 
