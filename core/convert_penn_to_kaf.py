@@ -39,7 +39,7 @@ def convert_penn_to_kaf_with_numtokens(tree_str,term_ids,logging,lemma_for_termi
     cnt_edge = off_edge
 
     this_tree = Tree(tree_str)
-    logging.debug('\n'+str(this_tree))    ##It has been already encoded using iso-8859-1
+    logging.debug('\n'+str(this_tree))    ##It has been already encoded using UTF8
     for num, num_token_and_token in enumerate(this_tree.leaves()):
         ## token is not used at all
         ##print num,token,position,token_id

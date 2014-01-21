@@ -19,8 +19,8 @@ from convert_penn_to_kaf import convert_penn_to_kaf_with_numtokens
 #       so the label "begin" in the xml is used to know which is the number of token of each <node>
 
 
-last_modified='17Jan2014'
-version="1.3"
+last_modified='21Jan2014'
+version="1.4"
 this_name = 'alpino kaf constituency parser'
 this_layer = 'constituents'
 
@@ -40,7 +40,6 @@ def node_to_penn(node):
   if len(children) == 0:
     word = node.get('word',None)
     if word is not None:
-       
       #The attribute begin gives you the number of the token
       word = word.replace('(','-LRB')
       word = word.replace(')','-RRB-')
@@ -53,8 +52,7 @@ def node_to_penn(node):
         head = '=H'
       else: 
         head = ''
-      ## Alpino generates ISO-8859-1 encoding, so we need to to this for being able to encode symbols like EURO
-      return '('+node.get('pos')+head+' '+word.encode('iso-8859-1')+')'
+      return '('+node.get('pos')+head+' '+word.encode('utf-8')+')'
     else:
       return ''
   else:
@@ -66,7 +64,13 @@ def node_to_penn(node):
 
     
 def xml_to_penn(filename):
-  tree = etree.parse(filename)
+    
+  ## Under certain condition, there is know bug of Alpino, it sets the encoding in the XML
+  ## to iso-8859-1, but the real encoding is UTF-8. So we need to force to use this encoding
+  
+  parser = etree.XMLParser(encoding='UTF-8')
+  tree = etree.parse(filename,parser)
+  
   str = node_to_penn(tree.find('node'))
   return str
 
@@ -135,6 +139,9 @@ out_folder_alp = tempfile.mkdtemp()
 
 
 logging.debug('Calling to Alpino parser in '+ALPINO_HOME)
+logging.debug('Temporary folder: '+out_folder_alp)
+
+
 ## CALL TO ALPINO
 alpino_bin = os.path.join(ALPINO_HOME,'bin','Alpino')
 cmd = alpino_bin+' -fast end_hook=xml -flag treebank '+out_folder_alp+' -parse'

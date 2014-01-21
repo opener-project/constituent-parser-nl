@@ -6,7 +6,7 @@
       <lp timestamp="*" version="1.0" name="Open-nlp tokenizer"/>
     </linguisticProcessors>
     <linguisticProcessor layer="constituents">
-      <lp timestamp="*" version="1.3_17Jan2014" name="alpino kaf constituency parser"/>
+      <lp timestamp="*" version="1.4_21Jan2014" name="alpino kaf constituency parser"/>
     </linguisticProcessor>
     <linguisticProcessor layer="term">
       <lp timestamp="2013-12-20T18:21:40CET" version="1.0" name="Open nlp pos tagger"/>
