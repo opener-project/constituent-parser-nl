@@ -28,7 +28,7 @@ this_layer = 'constituents'
 
 
 #### SET THIS VARIABLE TO YOUR LOCAL FOLDER OF ALPINO
-ALPINO_HOME = '/Users/ruben/NLP_tools/Alpino'
+ALPINO_HOME = '/home/izquierdo/tools/Alpino'
 
 logging.basicConfig(stream=sys.stderr,format='%(asctime)s - %(levelname)s - %(message)s',level=logging.DEBUG)
 
@@ -120,6 +120,9 @@ for term in my_kaf.getTerms():
 
 previous_sent = None
 for token,sent,token_id in my_kaf.getTokens():
+  ##To avoid using tokens that have no term linked
+  if token_id not in termid_for_token:
+    continue
   if sent != previous_sent and previous_sent!=None:
     sentences.append(current_sent)
     current_sent = [token]
@@ -153,8 +156,10 @@ for sentence in sentences:
     token = token.replace('[','\[')
     token = token.replace(']','\]')
     token = token.replace('|','\|')
+    #print>>sys.stderr,token.encode('utf-8'),
     alpino_pro.stdin.write(token.encode('utf-8')+' ')
   alpino_pro.stdin.write('\n')
+  #print>>sys.stderr
 alpino_pro.stdin.close()
 
 #print>>sys.stderr,alpino_pro.stderr.read()
@@ -173,9 +178,12 @@ const = etree.Element('constituency')
 cnt_t = cnt_nt = cnt_edge = 0
 for num_sent in range(len(sentences)):
   xml_file = os.path.join(out_folder_alp,str(num_sent+1)+'.xml')    
-  logging.debug('Converting alpino XML to pennTreebank, sentence num '+str(num_sent+1))
-  penn_str = xml_to_penn(xml_file)
-  tree_node,cnt_t,cnt_nt,cnt_edge = convert_penn_to_kaf_with_numtokens(penn_str,term_ids[num_sent],logging,lemma_for_termid,cnt_t,cnt_nt,cnt_edge)
+  if os.path.exists(xml_file):
+    logging.debug('Converting alpino XML to pennTreebank, sentence num '+str(num_sent+1))
+    penn_str = xml_to_penn(xml_file)
+    tree_node,cnt_t,cnt_nt,cnt_edge = convert_penn_to_kaf_with_numtokens(penn_str,term_ids[num_sent],logging,lemma_for_termid,cnt_t,cnt_nt,cnt_edge)
+  else:
+    tree_node = etree.Element('tree') #empty
   const.append(tree_node)
 
 
