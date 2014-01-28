@@ -100,7 +100,7 @@ def convert_penn_to_kaf_with_numtokens(tree_str,term_ids,logging,lemma_for_termi
             label_from = lemma_for_ter.get(node_from,'kk')
                                         
         comment = '  '+(edge_id)+'  '+(label_to)+' <- '+(label_from)+' '
-        
+        comment = comment.replace('--','-')
         if node_from in nonter_heads:
             ele.set('head','yes')
         root.append(etree.Comment(comment))

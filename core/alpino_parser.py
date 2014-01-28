@@ -29,6 +29,7 @@ this_layer = 'constituents'
 
 #### SET THIS VARIABLE TO YOUR LOCAL FOLDER OF ALPINO
 ALPINO_HOME = '/home/izquierdo/tools/Alpino'
+ALPINO_HOME = '/Users/ruben/NLP_tools/Alpino'
 
 logging.basicConfig(stream=sys.stderr,format='%(asctime)s - %(levelname)s - %(message)s',level=logging.DEBUG)
 
@@ -196,6 +197,6 @@ logging.debug('Number of sentences in the input KAF:  '+str(len(sentences)))
 logging.debug('PROCESS DONE')
 
 ##Remove temporary stuff
-shutil.rmtree(out_folder_alp)
-#print out_folder_alp
+#shutil.rmtree(out_folder_alp)
+print out_folder_alp
 sys.exit(0)
