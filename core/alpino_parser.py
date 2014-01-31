@@ -148,7 +148,7 @@ logging.debug('Temporary folder: '+out_folder_alp)
 
 ## CALL TO ALPINO
 alpino_bin = os.path.join(ALPINO_HOME,'bin','Alpino')
-cmd = alpino_bin+' -fast end_hook=xml -flag treebank '+out_folder_alp+' -parse'
+cmd = alpino_bin+' end_hook=xml -flag treebank '+out_folder_alp+' -parse'
 os.environ['ALPINO_HOME']=ALPINO_HOME
 alpino_pro = Popen(cmd,stdout=PIPE,stdin=PIPE,stderr=PIPE,shell=True)
 
@@ -197,6 +197,6 @@ logging.debug('Number of sentences in the input KAF:  '+str(len(sentences)))
 logging.debug('PROCESS DONE')
 
 ##Remove temporary stuff
-#shutil.rmtree(out_folder_alp)
-print out_folder_alp
+shutil.rmtree(out_folder_alp)
+#print out_folder_alp
 sys.exit(0)
