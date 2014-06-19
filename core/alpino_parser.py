@@ -24,12 +24,8 @@ version="1.4"
 this_name = 'alpino kaf constituency parser'
 this_layer = 'constituents'
 
-
-
-
 #### SET THIS VARIABLE TO YOUR LOCAL FOLDER OF ALPINO
-ALPINO_HOME = '/home/izquierdo/tools/Alpino'
-ALPINO_HOME = '/Users/ruben/NLP_tools/Alpino'
+ALPINO_HOME = os.environ['ALPINO_HOME']
 
 logging.basicConfig(stream=sys.stderr,format='%(asctime)s - %(levelname)s - %(message)s',level=logging.DEBUG)
 
@@ -149,7 +145,6 @@ logging.debug('Temporary folder: '+out_folder_alp)
 ## CALL TO ALPINO
 alpino_bin = os.path.join(ALPINO_HOME,'bin','Alpino')
 cmd = alpino_bin+' end_hook=xml -flag treebank '+out_folder_alp+' -parse'
-os.environ['ALPINO_HOME']=ALPINO_HOME
 alpino_pro = Popen(cmd,stdout=PIPE,stdin=PIPE,stderr=PIPE,shell=True)
 
 for sentence in sentences:
@@ -163,7 +158,7 @@ for sentence in sentences:
   #print>>sys.stderr
 alpino_pro.stdin.close()
 
-#print>>sys.stderr,alpino_pro.stderr.read()
+print>>sys.stderr,alpino_pro.stderr.read()
 
 # As we are not reading the stdout or stderr of the process, if we dont wait to it to be done
 # the parent will keep running without alpino be completed, and we will get empty XML files
