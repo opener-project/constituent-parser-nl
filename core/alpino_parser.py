@@ -158,7 +158,8 @@ for sentence in sentences:
   #print>>sys.stderr
 alpino_pro.stdin.close()
 
-print>>sys.stderr,alpino_pro.stderr.read()
+error_log = alpino_pro.stderr.read()
+#print>>sys.stderr,alpino_pro.stderr.read()
 
 # As we are not reading the stdout or stderr of the process, if we dont wait to it to be done
 # the parent will keep running without alpino be completed, and we will get empty XML files
@@ -172,6 +173,7 @@ const = etree.Element('constituency')
 
 #for xml_file in glob.glob(os.path.join(out_folder_alp,'*.xml')):
 cnt_t = cnt_nt = cnt_edge = 0
+some_error = False
 for num_sent in range(len(sentences)):
   xml_file = os.path.join(out_folder_alp,str(num_sent+1)+'.xml')    
   if os.path.exists(xml_file):
@@ -180,8 +182,14 @@ for num_sent in range(len(sentences)):
     tree_node,cnt_t,cnt_nt,cnt_edge = convert_penn_to_kaf_with_numtokens(penn_str,term_ids[num_sent],logging,lemma_for_termid,cnt_t,cnt_nt,cnt_edge)
   else:
     tree_node = etree.Element('tree') #empty
+    some_error = True
   const.append(tree_node)
 
+if some_error:
+  print>>sys.stderr,'POSSIBLE ERROR',error_log
+  value = -1
+else:
+  value = 0
 
 my_kaf.tree.getroot().append(const)
 my_kaf.addLinguisticProcessor(this_name, version+'_'+last_modified, this_layer, my_time_stamp)
@@ -194,4 +202,4 @@ logging.debug('PROCESS DONE')
 ##Remove temporary stuff
 shutil.rmtree(out_folder_alp)
 #print out_folder_alp
-sys.exit(0)
+sys.exit(value)
