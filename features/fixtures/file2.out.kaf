@@ -1,0 +1,1013 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<KAF xml:lang="nl">
+  <kafHeader>
+    <linguisticProcessors layer="text">
+      <lp timestamp="*" version="1.0" name="Open-nlp sentence splitter"/>
+      <lp timestamp="*" version="1.0" name="Open-nlp tokenizer"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="constituents">
+      <lp timestamp="*" version="1.4_21Jan2014" name="alpino kaf constituency parser"/>
+    </linguisticProcessors>
+    <linguisticProcessor layer="term">
+      <lp timestamp="2013-12-20T18:21:40CET" version="1.0" name="Open nlp pos tagger"/>
+    </linguisticProcessor>
+  </kafHeader>
+  <text>
+    <wf wid="w_1" sent="1">Beatrix</wf>
+    <wf wid="w_2" sent="1">Wilhelmina</wf>
+    <wf wid="w_3" sent="1">Armgard</wf>
+    <wf wid="w_4" sent="1">van</wf>
+    <wf wid="w_5" sent="1">Oranje-Nassau</wf>
+    <wf wid="w_6" sent="1">(</wf>
+    <wf wid="w_7" sent="1">Baarn</wf>
+    <wf wid="w_8" sent="1">,</wf>
+    <wf wid="w_9" sent="1">31</wf>
+    <wf wid="w_10" sent="1">januari</wf>
+    <wf wid="w_11" sent="1">1938</wf>
+    <wf wid="w_12" sent="1">)</wf>
+    <wf wid="w_13" sent="1">is</wf>
+    <wf wid="w_14" sent="1">sinds</wf>
+    <wf wid="w_15" sent="1">30</wf>
+    <wf wid="w_16" sent="1">april</wf>
+    <wf wid="w_17" sent="1">1980</wf>
+    <wf wid="w_18" sent="1">Koningin</wf>
+    <wf wid="w_19" sent="1">der</wf>
+    <wf wid="w_20" sent="1">Nederlanden</wf>
+    <wf wid="w_21" sent="1">.</wf>
+    <wf wid="w_22" sent="2">Zij</wf>
+    <wf wid="w_23" sent="2">regeert</wf>
+    <wf wid="w_24" sent="2">onder</wf>
+    <wf wid="w_25" sent="2">de</wf>
+    <wf wid="w_26" sent="2">naam</wf>
+    <wf wid="w_27" sent="2">Beatrix</wf>
+    <wf wid="w_28" sent="2">en</wf>
+    <wf wid="w_29" sent="2">draagt</wf>
+    <wf wid="w_30" sent="2">onder</wf>
+    <wf wid="w_31" sent="2">meer</wf>
+    <wf wid="w_32" sent="2">de</wf>
+    <wf wid="w_33" sent="2">titels</wf>
+    <wf wid="w_34" sent="2">prinses</wf>
+    <wf wid="w_35" sent="2">van</wf>
+    <wf wid="w_36" sent="2">Oranje-Nassau</wf>
+    <wf wid="w_37" sent="2">,</wf>
+    <wf wid="w_38" sent="2">prinses</wf>
+    <wf wid="w_39" sent="2">der</wf>
+    <wf wid="w_40" sent="2">Nederlanden</wf>
+    <wf wid="w_41" sent="2">en</wf>
+    <wf wid="w_42" sent="2">prinses</wf>
+    <wf wid="w_43" sent="2">van</wf>
+    <wf wid="w_44" sent="2">Lippe-Biesterfeld</wf>
+    <wf wid="w_45" sent="2">.</wf>
+    <wf wid="w_46" sent="3">Beatrix</wf>
+    <wf wid="w_47" sent="3">is</wf>
+    <wf wid="w_48" sent="3">sinds</wf>
+    <wf wid="w_49" sent="3">2002</wf>
+    <wf wid="w_50" sent="3">weduwe</wf>
+    <wf wid="w_51" sent="3">van</wf>
+    <wf wid="w_52" sent="3">prins</wf>
+    <wf wid="w_53" sent="3">Claus</wf>
+    <wf wid="w_54" sent="3">van</wf>
+    <wf wid="w_55" sent="3">Amsberg</wf>
+    <wf wid="w_56" sent="3">.</wf>
+  </text>
+  <terms>
+    <term lemma="Beatrix" morphofeat="N" pos="N" tid="t1" type="open">
+      <span>
+        <target id="w_1"/>
+      </span>
+    </term>
+    <term lemma="Wilhelmina" morphofeat="N" pos="N" tid="t2" type="open">
+      <span>
+        <target id="w_2"/>
+      </span>
+    </term>
+    <term lemma="Armgard" morphofeat="N" pos="N" tid="t3" type="open">
+      <span>
+        <target id="w_3"/>
+      </span>
+    </term>
+    <term lemma="van" morphofeat="Prep" pos="P" tid="t4" type="close">
+      <span>
+        <target id="w_4"/>
+      </span>
+    </term>
+    <term lemma="Oranje-Nassau" morphofeat="N" pos="N" tid="t5" type="open">
+      <span>
+        <target id="w_5"/>
+      </span>
+    </term>
+    <term lemma="(" morphofeat="Punc" pos="O" tid="t6" type="open">
+      <span>
+        <target id="w_6"/>
+      </span>
+    </term>
+    <term lemma="Baarn" morphofeat="N" pos="N" tid="t7" type="open">
+      <span>
+        <target id="w_7"/>
+      </span>
+    </term>
+    <term lemma="," morphofeat="Punc" pos="O" tid="t8" type="open">
+      <span>
+        <target id="w_8"/>
+      </span>
+    </term>
+    <term lemma="31" morphofeat="Num" pos="O" tid="t9" type="open">
+      <span>
+        <target id="w_9"/>
+      </span>
+    </term>
+    <term lemma="januari" morphofeat="N" pos="N" tid="t10" type="open">
+      <span>
+        <target id="w_10"/>
+      </span>
+    </term>
+    <term lemma="1938" morphofeat="Num" pos="O" tid="t11" type="open">
+      <span>
+        <target id="w_11"/>
+      </span>
+    </term>
+    <term lemma=")" morphofeat="Punc" pos="O" tid="t12" type="open">
+      <span>
+        <target id="w_12"/>
+      </span>
+    </term>
+    <term lemma="is" morphofeat="V" pos="V" tid="t13" type="open">
+      <span>
+        <target id="w_13"/>
+      </span>
+    </term>
+    <term lemma="sinds" morphofeat="Prep" pos="P" tid="t14" type="close">
+      <span>
+        <target id="w_14"/>
+      </span>
+    </term>
+    <term lemma="30" morphofeat="Num" pos="O" tid="t15" type="open">
+      <span>
+        <target id="w_15"/>
+      </span>
+    </term>
+    <term lemma="april" morphofeat="N" pos="N" tid="t16" type="open">
+      <span>
+        <target id="w_16"/>
+      </span>
+    </term>
+    <term lemma="1980" morphofeat="Num" pos="O" tid="t17" type="open">
+      <span>
+        <target id="w_17"/>
+      </span>
+    </term>
+    <term lemma="Koningin" morphofeat="N" pos="N" tid="t18" type="open">
+      <span>
+        <target id="w_18"/>
+      </span>
+    </term>
+    <term lemma="der" morphofeat="Art" pos="D" tid="t19" type="close">
+      <span>
+        <target id="w_19"/>
+      </span>
+    </term>
+    <term lemma="Nederlanden" morphofeat="N" pos="N" tid="t20" type="open">
+      <span>
+        <target id="w_20"/>
+      </span>
+    </term>
+    <term lemma="." morphofeat="Punc" pos="O" tid="t21" type="open">
+      <span>
+        <target id="w_21"/>
+      </span>
+    </term>
+    <term lemma="Zij" morphofeat="Pron" pos="Q" tid="t22" type="close">
+      <span>
+        <target id="w_22"/>
+      </span>
+    </term>
+    <term lemma="regeert" morphofeat="V" pos="V" tid="t23" type="open">
+      <span>
+        <target id="w_23"/>
+      </span>
+    </term>
+    <term lemma="onder" morphofeat="Prep" pos="P" tid="t24" type="close">
+      <span>
+        <target id="w_24"/>
+      </span>
+    </term>
+    <term lemma="de" morphofeat="Art" pos="D" tid="t25" type="close">
+      <span>
+        <target id="w_25"/>
+      </span>
+    </term>
+    <term lemma="naam" morphofeat="N" pos="N" tid="t26" type="open">
+      <span>
+        <target id="w_26"/>
+      </span>
+    </term>
+    <term lemma="Beatrix" morphofeat="N" pos="N" tid="t27" type="open">
+      <span>
+        <target id="w_27"/>
+      </span>
+    </term>
+    <term lemma="en" morphofeat="Conj" pos="C" tid="t28" type="close">
+      <span>
+        <target id="w_28"/>
+      </span>
+    </term>
+    <term lemma="draagt" morphofeat="V" pos="V" tid="t29" type="open">
+      <span>
+        <target id="w_29"/>
+      </span>
+    </term>
+    <term lemma="onder" morphofeat="Prep" pos="P" tid="t30" type="close">
+      <span>
+        <target id="w_30"/>
+      </span>
+    </term>
+    <term lemma="meer" morphofeat="Num" pos="O" tid="t31" type="open">
+      <span>
+        <target id="w_31"/>
+      </span>
+    </term>
+    <term lemma="de" morphofeat="Art" pos="D" tid="t32" type="close">
+      <span>
+        <target id="w_32"/>
+      </span>
+    </term>
+    <term lemma="titels" morphofeat="N" pos="N" tid="t33" type="open">
+      <span>
+        <target id="w_33"/>
+      </span>
+    </term>
+    <term lemma="prinses" morphofeat="N" pos="N" tid="t34" type="open">
+      <span>
+        <target id="w_34"/>
+      </span>
+    </term>
+    <term lemma="van" morphofeat="Prep" pos="P" tid="t35" type="close">
+      <span>
+        <target id="w_35"/>
+      </span>
+    </term>
+    <term lemma="Oranje-Nassau" morphofeat="N" pos="N" tid="t36" type="open">
+      <span>
+        <target id="w_36"/>
+      </span>
+    </term>
+    <term lemma="," morphofeat="Punc" pos="O" tid="t37" type="open">
+      <span>
+        <target id="w_37"/>
+      </span>
+    </term>
+    <term lemma="prinses" morphofeat="N" pos="N" tid="t38" type="open">
+      <span>
+        <target id="w_38"/>
+      </span>
+    </term>
+    <term lemma="der" morphofeat="Art" pos="D" tid="t39" type="close">
+      <span>
+        <target id="w_39"/>
+      </span>
+    </term>
+    <term lemma="Nederlanden" morphofeat="N" pos="N" tid="t40" type="open">
+      <span>
+        <target id="w_40"/>
+      </span>
+    </term>
+    <term lemma="en" morphofeat="Conj" pos="C" tid="t41" type="close">
+      <span>
+        <target id="w_41"/>
+      </span>
+    </term>
+    <term lemma="prinses" morphofeat="N" pos="N" tid="t42" type="open">
+      <span>
+        <target id="w_42"/>
+      </span>
+    </term>
+    <term lemma="van" morphofeat="Prep" pos="P" tid="t43" type="close">
+      <span>
+        <target id="w_43"/>
+      </span>
+    </term>
+    <term lemma="Lippe-Biesterfeld" morphofeat="N" pos="N" tid="t44" type="open">
+      <span>
+        <target id="w_44"/>
+      </span>
+    </term>
+    <term lemma="." morphofeat="Punc" pos="O" tid="t45" type="open">
+      <span>
+        <target id="w_45"/>
+      </span>
+    </term>
+    <term lemma="Beatrix" morphofeat="N" pos="N" tid="t46" type="open">
+      <span>
+        <target id="w_46"/>
+      </span>
+    </term>
+    <term lemma="is" morphofeat="V" pos="V" tid="t47" type="open">
+      <span>
+        <target id="w_47"/>
+      </span>
+    </term>
+    <term lemma="sinds" morphofeat="Prep" pos="P" tid="t48" type="close">
+      <span>
+        <target id="w_48"/>
+      </span>
+    </term>
+    <term lemma="2002" morphofeat="Num" pos="O" tid="t49" type="open">
+      <span>
+        <target id="w_49"/>
+      </span>
+    </term>
+    <term lemma="weduwe" morphofeat="N" pos="N" tid="t50" type="open">
+      <span>
+        <target id="w_50"/>
+      </span>
+    </term>
+    <term lemma="van" morphofeat="Prep" pos="P" tid="t51" type="close">
+      <span>
+        <target id="w_51"/>
+      </span>
+    </term>
+    <term lemma="prins" morphofeat="N" pos="N" tid="t52" type="open">
+      <span>
+        <target id="w_52"/>
+      </span>
+    </term>
+    <term lemma="Claus" morphofeat="N" pos="N" tid="t53" type="open">
+      <span>
+        <target id="w_53"/>
+      </span>
+    </term>
+    <term lemma="van" morphofeat="Prep" pos="P" tid="t54" type="close">
+      <span>
+        <target id="w_54"/>
+      </span>
+    </term>
+    <term lemma="Amsberg" morphofeat="N" pos="N" tid="t55" type="open">
+      <span>
+        <target id="w_55"/>
+      </span>
+    </term>
+    <term lemma="." morphofeat="Punc" pos="O" tid="t56" type="open">
+      <span>
+        <target id="w_56"/>
+      </span>
+    </term>
+  </terms>
+  <constituency>
+    <tree>
+      <nt id="nter0" label="top"/>
+      <nt id="nter1" label="punct"/>
+      <nt id="nter2" label="punct"/>
+      <nt id="nter3" label="punct"/>
+      <nt id="nter4" label="smain"/>
+      <nt id="nter5" label="np"/>
+      <nt id="nter6" label="mwu"/>
+      <nt id="nter7" label="name"/>
+      <nt id="nter8" label="name"/>
+      <nt id="nter9" label="name"/>
+      <nt id="nter10" label="pp"/>
+      <nt id="nter11" label="prep"/>
+      <nt id="nter12" label="np"/>
+      <nt id="nter13" label="name"/>
+      <nt id="nter14" label="np"/>
+      <nt id="nter15" label="name"/>
+      <nt id="nter16" label="mwu"/>
+      <nt id="nter17" label="noun"/>
+      <nt id="nter18" label="noun"/>
+      <nt id="nter19" label="noun"/>
+      <nt id="nter20" label="verb"/>
+      <nt id="nter21" label="pp"/>
+      <nt id="nter22" label="prep"/>
+      <nt id="nter23" label="mwu"/>
+      <nt id="nter24" label="noun"/>
+      <nt id="nter25" label="noun"/>
+      <nt id="nter26" label="noun"/>
+      <nt id="nter27" label="mwu"/>
+      <nt id="nter28" label="name"/>
+      <nt id="nter29" label="name"/>
+      <nt id="nter30" label="name"/>
+      <nt id="nter31" label="punct"/>
+      <t id="ter0">
+        <span>
+          <target id="t6"/>
+        </span>
+      </t>
+      <t id="ter1">
+        <span>
+          <target id="t8"/>
+        </span>
+      </t>
+      <t id="ter2">
+        <span>
+          <target id="t12"/>
+        </span>
+      </t>
+      <t id="ter3">
+        <span>
+          <target id="t1"/>
+        </span>
+      </t>
+      <t id="ter4">
+        <span>
+          <target id="t2"/>
+        </span>
+      </t>
+      <t id="ter5">
+        <span>
+          <target id="t3"/>
+        </span>
+      </t>
+      <t id="ter6">
+        <span>
+          <target id="t4"/>
+        </span>
+      </t>
+      <t id="ter7">
+        <span>
+          <target id="t5"/>
+        </span>
+      </t>
+      <t id="ter8">
+        <span>
+          <target id="t7"/>
+        </span>
+      </t>
+      <t id="ter9">
+        <span>
+          <target id="t9"/>
+        </span>
+      </t>
+      <t id="ter10">
+        <span>
+          <target id="t10"/>
+        </span>
+      </t>
+      <t id="ter11">
+        <span>
+          <target id="t11"/>
+        </span>
+      </t>
+      <t id="ter12">
+        <span>
+          <target id="t13"/>
+        </span>
+      </t>
+      <t id="ter13">
+        <span>
+          <target id="t14"/>
+        </span>
+      </t>
+      <t id="ter14">
+        <span>
+          <target id="t15"/>
+        </span>
+      </t>
+      <t id="ter15">
+        <span>
+          <target id="t16"/>
+        </span>
+      </t>
+      <t id="ter16">
+        <span>
+          <target id="t17"/>
+        </span>
+      </t>
+      <t id="ter17">
+        <span>
+          <target id="t18"/>
+        </span>
+      </t>
+      <t id="ter18">
+        <span>
+          <target id="t19"/>
+        </span>
+      </t>
+      <t id="ter19">
+        <span>
+          <target id="t20"/>
+        </span>
+      </t>
+      <t id="ter20">
+        <span>
+          <target id="t21"/>
+        </span>
+      </t>
+      <!--  tre0  top <- punct -->
+      <edge from="nter1" id="tre0" to="nter0"/>
+      <!--  tre1  punct <- ( -->
+      <edge from="ter0" id="tre1" to="nter1"/>
+      <!--  tre2  top <- punct -->
+      <edge from="nter2" id="tre2" to="nter0"/>
+      <!--  tre3  punct <- , -->
+      <edge from="ter1" id="tre3" to="nter2"/>
+      <!--  tre4  top <- punct -->
+      <edge from="nter3" id="tre4" to="nter0"/>
+      <!--  tre5  punct <- ) -->
+      <edge from="ter2" id="tre5" to="nter3"/>
+      <!--  tre6  top <- smain -->
+      <edge from="nter4" id="tre6" to="nter0"/>
+      <!--  tre7  smain <- np -->
+      <edge from="nter5" id="tre7" to="nter4"/>
+      <!--  tre8  np <- mwu -->
+      <edge from="nter6" id="tre8" to="nter5"/>
+      <!--  tre9  mwu <- name -->
+      <edge from="nter7" id="tre9" to="nter6"/>
+      <!--  tre10  name <- Beatrix -->
+      <edge from="ter3" id="tre10" to="nter7"/>
+      <!--  tre11  mwu <- name -->
+      <edge from="nter8" id="tre11" to="nter6"/>
+      <!--  tre12  name <- Wilhelmina -->
+      <edge from="ter4" id="tre12" to="nter8"/>
+      <!--  tre13  mwu <- name -->
+      <edge from="nter9" id="tre13" to="nter6"/>
+      <!--  tre14  name <- Armgard -->
+      <edge from="ter5" id="tre14" to="nter9"/>
+      <!--  tre15  np <- pp -->
+      <edge from="nter10" id="tre15" to="nter5"/>
+      <!--  tre16  pp <- prep -->
+      <edge from="nter11" id="tre16" to="nter10" head="yes"/>
+      <!--  tre17  prep <- van -->
+      <edge from="ter6" id="tre17" to="nter11"/>
+      <!--  tre18  pp <- np -->
+      <edge from="nter12" id="tre18" to="nter10"/>
+      <!--  tre19  np <- name -->
+      <edge from="nter13" id="tre19" to="nter12" head="yes"/>
+      <!--  tre20  name <- Oranje-Nassau -->
+      <edge from="ter7" id="tre20" to="nter13"/>
+      <!--  tre21  np <- np -->
+      <edge from="nter14" id="tre21" to="nter12"/>
+      <!--  tre22  np <- name -->
+      <edge from="nter15" id="tre22" to="nter14" head="yes"/>
+      <!--  tre23  name <- Baarn -->
+      <edge from="ter8" id="tre23" to="nter15"/>
+      <!--  tre24  np <- mwu -->
+      <edge from="nter16" id="tre24" to="nter14"/>
+      <!--  tre25  mwu <- noun -->
+      <edge from="nter17" id="tre25" to="nter16"/>
+      <!--  tre26  noun <- 31 -->
+      <edge from="ter9" id="tre26" to="nter17"/>
+      <!--  tre27  mwu <- noun -->
+      <edge from="nter18" id="tre27" to="nter16"/>
+      <!--  tre28  noun <- januari -->
+      <edge from="ter10" id="tre28" to="nter18"/>
+      <!--  tre29  mwu <- noun -->
+      <edge from="nter19" id="tre29" to="nter16"/>
+      <!--  tre30  noun <- 1938 -->
+      <edge from="ter11" id="tre30" to="nter19"/>
+      <!--  tre31  smain <- verb -->
+      <edge from="nter20" id="tre31" to="nter4" head="yes"/>
+      <!--  tre32  verb <- is -->
+      <edge from="ter12" id="tre32" to="nter20"/>
+      <!--  tre33  smain <- pp -->
+      <edge from="nter21" id="tre33" to="nter4"/>
+      <!--  tre34  pp <- prep -->
+      <edge from="nter22" id="tre34" to="nter21" head="yes"/>
+      <!--  tre35  prep <- sinds -->
+      <edge from="ter13" id="tre35" to="nter22"/>
+      <!--  tre36  pp <- mwu -->
+      <edge from="nter23" id="tre36" to="nter21"/>
+      <!--  tre37  mwu <- noun -->
+      <edge from="nter24" id="tre37" to="nter23"/>
+      <!--  tre38  noun <- 30 -->
+      <edge from="ter14" id="tre38" to="nter24"/>
+      <!--  tre39  mwu <- noun -->
+      <edge from="nter25" id="tre39" to="nter23"/>
+      <!--  tre40  noun <- april -->
+      <edge from="ter15" id="tre40" to="nter25"/>
+      <!--  tre41  mwu <- noun -->
+      <edge from="nter26" id="tre41" to="nter23"/>
+      <!--  tre42  noun <- 1980 -->
+      <edge from="ter16" id="tre42" to="nter26"/>
+      <!--  tre43  smain <- mwu -->
+      <edge from="nter27" id="tre43" to="nter4"/>
+      <!--  tre44  mwu <- name -->
+      <edge from="nter28" id="tre44" to="nter27"/>
+      <!--  tre45  name <- Koningin -->
+      <edge from="ter17" id="tre45" to="nter28"/>
+      <!--  tre46  mwu <- name -->
+      <edge from="nter29" id="tre46" to="nter27"/>
+      <!--  tre47  name <- der -->
+      <edge from="ter18" id="tre47" to="nter29"/>
+      <!--  tre48  mwu <- name -->
+      <edge from="nter30" id="tre48" to="nter27"/>
+      <!--  tre49  name <- Nederlanden -->
+      <edge from="ter19" id="tre49" to="nter30"/>
+      <!--  tre50  top <- punct -->
+      <edge from="nter31" id="tre50" to="nter0"/>
+      <!--  tre51  punct <- . -->
+      <edge from="ter20" id="tre51" to="nter31"/>
+    </tree>
+    <tree>
+      <nt id="nter32" label="top"/>
+      <nt id="nter33" label="punct"/>
+      <nt id="nter34" label="conj"/>
+      <nt id="nter35" label="smain"/>
+      <nt id="nter36" label="pron"/>
+      <nt id="nter37" label="verb"/>
+      <nt id="nter38" label="pp"/>
+      <nt id="nter39" label="prep"/>
+      <nt id="nter40" label="np"/>
+      <nt id="nter41" label="det"/>
+      <nt id="nter42" label="noun"/>
+      <nt id="nter43" label="name"/>
+      <nt id="nter44" label="vg"/>
+      <nt id="nter45" label="smain"/>
+      <nt id="nter46" label="verb"/>
+      <nt id="nter47" label="np"/>
+      <nt id="nter48" label="mwu"/>
+      <nt id="nter49" label="adv"/>
+      <nt id="nter50" label="adv"/>
+      <nt id="nter51" label="det"/>
+      <nt id="nter52" label="noun"/>
+      <nt id="nter53" label="noun"/>
+      <nt id="nter54" label="pp"/>
+      <nt id="nter55" label="prep"/>
+      <nt id="nter56" label="conj"/>
+      <nt id="nter57" label="name"/>
+      <nt id="nter58" label="np"/>
+      <nt id="nter59" label="noun"/>
+      <nt id="nter60" label="np"/>
+      <nt id="nter61" label="det"/>
+      <nt id="nter62" label="name"/>
+      <nt id="nter63" label="vg"/>
+      <nt id="nter64" label="np"/>
+      <nt id="nter65" label="noun"/>
+      <nt id="nter66" label="pp"/>
+      <nt id="nter67" label="prep"/>
+      <nt id="nter68" label="name"/>
+      <nt id="nter69" label="punct"/>
+      <t id="ter21">
+        <span>
+          <target id="t37"/>
+        </span>
+      </t>
+      <t id="ter22">
+        <span>
+          <target id="t22"/>
+        </span>
+      </t>
+      <t id="ter23">
+        <span>
+          <target id="t23"/>
+        </span>
+      </t>
+      <t id="ter24">
+        <span>
+          <target id="t24"/>
+        </span>
+      </t>
+      <t id="ter25">
+        <span>
+          <target id="t25"/>
+        </span>
+      </t>
+      <t id="ter26">
+        <span>
+          <target id="t26"/>
+        </span>
+      </t>
+      <t id="ter27">
+        <span>
+          <target id="t27"/>
+        </span>
+      </t>
+      <t id="ter28">
+        <span>
+          <target id="t28"/>
+        </span>
+      </t>
+      <t id="ter29">
+        <span>
+          <target id="t29"/>
+        </span>
+      </t>
+      <t id="ter30">
+        <span>
+          <target id="t30"/>
+        </span>
+      </t>
+      <t id="ter31">
+        <span>
+          <target id="t31"/>
+        </span>
+      </t>
+      <t id="ter32">
+        <span>
+          <target id="t32"/>
+        </span>
+      </t>
+      <t id="ter33">
+        <span>
+          <target id="t33"/>
+        </span>
+      </t>
+      <t id="ter34">
+        <span>
+          <target id="t34"/>
+        </span>
+      </t>
+      <t id="ter35">
+        <span>
+          <target id="t35"/>
+        </span>
+      </t>
+      <t id="ter36">
+        <span>
+          <target id="t36"/>
+        </span>
+      </t>
+      <t id="ter37">
+        <span>
+          <target id="t38"/>
+        </span>
+      </t>
+      <t id="ter38">
+        <span>
+          <target id="t39"/>
+        </span>
+      </t>
+      <t id="ter39">
+        <span>
+          <target id="t40"/>
+        </span>
+      </t>
+      <t id="ter40">
+        <span>
+          <target id="t41"/>
+        </span>
+      </t>
+      <t id="ter41">
+        <span>
+          <target id="t42"/>
+        </span>
+      </t>
+      <t id="ter42">
+        <span>
+          <target id="t43"/>
+        </span>
+      </t>
+      <t id="ter43">
+        <span>
+          <target id="t44"/>
+        </span>
+      </t>
+      <t id="ter44">
+        <span>
+          <target id="t45"/>
+        </span>
+      </t>
+      <!--  tre52  top <- punct -->
+      <edge from="nter33" id="tre52" to="nter32"/>
+      <!--  tre53  punct <- , -->
+      <edge from="ter21" id="tre53" to="nter33"/>
+      <!--  tre54  top <- conj -->
+      <edge from="nter34" id="tre54" to="nter32"/>
+      <!--  tre55  conj <- smain -->
+      <edge from="nter35" id="tre55" to="nter34"/>
+      <!--  tre56  smain <- pron -->
+      <edge from="nter36" id="tre56" to="nter35"/>
+      <!--  tre57  pron <- Zij -->
+      <edge from="ter22" id="tre57" to="nter36"/>
+      <!--  tre58  smain <- verb -->
+      <edge from="nter37" id="tre58" to="nter35" head="yes"/>
+      <!--  tre59  verb <- regeert -->
+      <edge from="ter23" id="tre59" to="nter37"/>
+      <!--  tre60  smain <- pp -->
+      <edge from="nter38" id="tre60" to="nter35"/>
+      <!--  tre61  pp <- prep -->
+      <edge from="nter39" id="tre61" to="nter38" head="yes"/>
+      <!--  tre62  prep <- onder -->
+      <edge from="ter24" id="tre62" to="nter39"/>
+      <!--  tre63  pp <- np -->
+      <edge from="nter40" id="tre63" to="nter38"/>
+      <!--  tre64  np <- det -->
+      <edge from="nter41" id="tre64" to="nter40"/>
+      <!--  tre65  det <- de -->
+      <edge from="ter25" id="tre65" to="nter41"/>
+      <!--  tre66  np <- noun -->
+      <edge from="nter42" id="tre66" to="nter40" head="yes"/>
+      <!--  tre67  noun <- naam -->
+      <edge from="ter26" id="tre67" to="nter42"/>
+      <!--  tre68  np <- name -->
+      <edge from="nter43" id="tre68" to="nter40"/>
+      <!--  tre69  name <- Beatrix -->
+      <edge from="ter27" id="tre69" to="nter43"/>
+      <!--  tre70  conj <- vg -->
+      <edge from="nter44" id="tre70" to="nter34"/>
+      <!--  tre71  vg <- en -->
+      <edge from="ter28" id="tre71" to="nter44"/>
+      <!--  tre72  conj <- smain -->
+      <edge from="nter45" id="tre72" to="nter34"/>
+      <!--  tre73  smain <- verb -->
+      <edge from="nter46" id="tre73" to="nter45" head="yes"/>
+      <!--  tre74  verb <- draagt -->
+      <edge from="ter29" id="tre74" to="nter46"/>
+      <!--  tre75  smain <- np -->
+      <edge from="nter47" id="tre75" to="nter45"/>
+      <!--  tre76  np <- mwu -->
+      <edge from="nter48" id="tre76" to="nter47"/>
+      <!--  tre77  mwu <- adv -->
+      <edge from="nter49" id="tre77" to="nter48"/>
+      <!--  tre78  adv <- onder -->
+      <edge from="ter30" id="tre78" to="nter49"/>
+      <!--  tre79  mwu <- adv -->
+      <edge from="nter50" id="tre79" to="nter48"/>
+      <!--  tre80  adv <- meer -->
+      <edge from="ter31" id="tre80" to="nter50"/>
+      <!--  tre81  np <- det -->
+      <edge from="nter51" id="tre81" to="nter47"/>
+      <!--  tre82  det <- de -->
+      <edge from="ter32" id="tre82" to="nter51"/>
+      <!--  tre83  np <- noun -->
+      <edge from="nter52" id="tre83" to="nter47" head="yes"/>
+      <!--  tre84  noun <- titels -->
+      <edge from="ter33" id="tre84" to="nter52"/>
+      <!--  tre85  np <- noun -->
+      <edge from="nter53" id="tre85" to="nter47"/>
+      <!--  tre86  noun <- prinses -->
+      <edge from="ter34" id="tre86" to="nter53"/>
+      <!--  tre87  np <- pp -->
+      <edge from="nter54" id="tre87" to="nter47"/>
+      <!--  tre88  pp <- prep -->
+      <edge from="nter55" id="tre88" to="nter54" head="yes"/>
+      <!--  tre89  prep <- van -->
+      <edge from="ter35" id="tre89" to="nter55"/>
+      <!--  tre90  pp <- conj -->
+      <edge from="nter56" id="tre90" to="nter54"/>
+      <!--  tre91  conj <- name -->
+      <edge from="nter57" id="tre91" to="nter56"/>
+      <!--  tre92  name <- Oranje-Nassau -->
+      <edge from="ter36" id="tre92" to="nter57"/>
+      <!--  tre93  conj <- np -->
+      <edge from="nter58" id="tre93" to="nter56"/>
+      <!--  tre94  np <- noun -->
+      <edge from="nter59" id="tre94" to="nter58" head="yes"/>
+      <!--  tre95  noun <- prinses -->
+      <edge from="ter37" id="tre95" to="nter59"/>
+      <!--  tre96  np <- np -->
+      <edge from="nter60" id="tre96" to="nter58"/>
+      <!--  tre97  np <- det -->
+      <edge from="nter61" id="tre97" to="nter60"/>
+      <!--  tre98  det <- der -->
+      <edge from="ter38" id="tre98" to="nter61"/>
+      <!--  tre99  np <- name -->
+      <edge from="nter62" id="tre99" to="nter60" head="yes"/>
+      <!--  tre100  name <- Nederlanden -->
+      <edge from="ter39" id="tre100" to="nter62"/>
+      <!--  tre101  conj <- vg -->
+      <edge from="nter63" id="tre101" to="nter56"/>
+      <!--  tre102  vg <- en -->
+      <edge from="ter40" id="tre102" to="nter63"/>
+      <!--  tre103  conj <- np -->
+      <edge from="nter64" id="tre103" to="nter56"/>
+      <!--  tre104  np <- noun -->
+      <edge from="nter65" id="tre104" to="nter64" head="yes"/>
+      <!--  tre105  noun <- prinses -->
+      <edge from="ter41" id="tre105" to="nter65"/>
+      <!--  tre106  np <- pp -->
+      <edge from="nter66" id="tre106" to="nter64"/>
+      <!--  tre107  pp <- prep -->
+      <edge from="nter67" id="tre107" to="nter66" head="yes"/>
+      <!--  tre108  prep <- van -->
+      <edge from="ter42" id="tre108" to="nter67"/>
+      <!--  tre109  pp <- name -->
+      <edge from="nter68" id="tre109" to="nter66"/>
+      <!--  tre110  name <- Lippe-Biesterfeld -->
+      <edge from="ter43" id="tre110" to="nter68"/>
+      <!--  tre111  top <- punct -->
+      <edge from="nter69" id="tre111" to="nter32"/>
+      <!--  tre112  punct <- . -->
+      <edge from="ter44" id="tre112" to="nter69"/>
+    </tree>
+    <tree>
+      <nt id="nter70" label="top"/>
+      <nt id="nter71" label="smain"/>
+      <nt id="nter72" label="name"/>
+      <nt id="nter73" label="verb"/>
+      <nt id="nter74" label="pp"/>
+      <nt id="nter75" label="prep"/>
+      <nt id="nter76" label="noun"/>
+      <nt id="nter77" label="np"/>
+      <nt id="nter78" label="noun"/>
+      <nt id="nter79" label="pp"/>
+      <nt id="nter80" label="prep"/>
+      <nt id="nter81" label="np"/>
+      <nt id="nter82" label="noun"/>
+      <nt id="nter83" label="name"/>
+      <nt id="nter84" label="pp"/>
+      <nt id="nter85" label="prep"/>
+      <nt id="nter86" label="name"/>
+      <nt id="nter87" label="punct"/>
+      <t id="ter45">
+        <span>
+          <target id="t46"/>
+        </span>
+      </t>
+      <t id="ter46">
+        <span>
+          <target id="t47"/>
+        </span>
+      </t>
+      <t id="ter47">
+        <span>
+          <target id="t48"/>
+        </span>
+      </t>
+      <t id="ter48">
+        <span>
+          <target id="t49"/>
+        </span>
+      </t>
+      <t id="ter49">
+        <span>
+          <target id="t50"/>
+        </span>
+      </t>
+      <t id="ter50">
+        <span>
+          <target id="t51"/>
+        </span>
+      </t>
+      <t id="ter51">
+        <span>
+          <target id="t52"/>
+        </span>
+      </t>
+      <t id="ter52">
+        <span>
+          <target id="t53"/>
+        </span>
+      </t>
+      <t id="ter53">
+        <span>
+          <target id="t54"/>
+        </span>
+      </t>
+      <t id="ter54">
+        <span>
+          <target id="t55"/>
+        </span>
+      </t>
+      <t id="ter55">
+        <span>
+          <target id="t56"/>
+        </span>
+      </t>
+      <!--  tre113  top <- smain -->
+      <edge from="nter71" id="tre113" to="nter70"/>
+      <!--  tre114  smain <- name -->
+      <edge from="nter72" id="tre114" to="nter71"/>
+      <!--  tre115  name <- Beatrix -->
+      <edge from="ter45" id="tre115" to="nter72"/>
+      <!--  tre116  smain <- verb -->
+      <edge from="nter73" id="tre116" to="nter71" head="yes"/>
+      <!--  tre117  verb <- is -->
+      <edge from="ter46" id="tre117" to="nter73"/>
+      <!--  tre118  smain <- pp -->
+      <edge from="nter74" id="tre118" to="nter71"/>
+      <!--  tre119  pp <- prep -->
+      <edge from="nter75" id="tre119" to="nter74" head="yes"/>
+      <!--  tre120  prep <- sinds -->
+      <edge from="ter47" id="tre120" to="nter75"/>
+      <!--  tre121  pp <- noun -->
+      <edge from="nter76" id="tre121" to="nter74"/>
+      <!--  tre122  noun <- 2002 -->
+      <edge from="ter48" id="tre122" to="nter76"/>
+      <!--  tre123  smain <- np -->
+      <edge from="nter77" id="tre123" to="nter71"/>
+      <!--  tre124  np <- noun -->
+      <edge from="nter78" id="tre124" to="nter77" head="yes"/>
+      <!--  tre125  noun <- weduwe -->
+      <edge from="ter49" id="tre125" to="nter78"/>
+      <!--  tre126  np <- pp -->
+      <edge from="nter79" id="tre126" to="nter77"/>
+      <!--  tre127  pp <- prep -->
+      <edge from="nter80" id="tre127" to="nter79" head="yes"/>
+      <!--  tre128  prep <- van -->
+      <edge from="ter50" id="tre128" to="nter80"/>
+      <!--  tre129  pp <- np -->
+      <edge from="nter81" id="tre129" to="nter79"/>
+      <!--  tre130  np <- noun -->
+      <edge from="nter82" id="tre130" to="nter81" head="yes"/>
+      <!--  tre131  noun <- prins -->
+      <edge from="ter51" id="tre131" to="nter82"/>
+      <!--  tre132  np <- name -->
+      <edge from="nter83" id="tre132" to="nter81"/>
+      <!--  tre133  name <- Claus -->
+      <edge from="ter52" id="tre133" to="nter83"/>
+      <!--  tre134  np <- pp -->
+      <edge from="nter84" id="tre134" to="nter81"/>
+      <!--  tre135  pp <- prep -->
+      <edge from="nter85" id="tre135" to="nter84" head="yes"/>
+      <!--  tre136  prep <- van -->
+      <edge from="ter53" id="tre136" to="nter85"/>
+      <!--  tre137  pp <- name -->
+      <edge from="nter86" id="tre137" to="nter84"/>
+      <!--  tre138  name <- Amsberg -->
+      <edge from="ter54" id="tre138" to="nter86"/>
+      <!--  tre139  top <- punct -->
+      <edge from="nter87" id="tre139" to="nter70"/>
+      <!--  tre140  punct <- . -->
+      <edge from="ter55" id="tre140" to="nter87"/>
+    </tree>
+  </constituency>
+</KAF>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<KAF xml:lang="nl" version="v1.opener">
+  <kafHeader>
+    <fileDesc />
+    <linguisticProcessors layer="text">
+      <lp name="opener-sentence-splitter-nl" timestamp="2014-06-20T09:46:04Z" version="0.0.1" />
+      <lp name="opener-tokenizer-nl" timestamp="2014-06-20T09:46:04Z" version="1.0.1" />
+    </linguisticProcessors>
+    <linguisticProcessors layer="terms">
+      <lp name="ehu-pos-nl" timestamp="now" version="1.0" />
+    </linguisticProcessors>
+  </kafHeader>
+  <text>
+    <wf wid="w1" sent="1" para="1" offset="0" length="3">dit</wf>
+    <wf wid="w2" sent="1" para="1" offset="4" length="2">is</wf>
+    <wf wid="w3" sent="1" para="1" offset="7" length="3">een</wf>
+    <wf wid="w4" sent="1" para="1" offset="11" length="5">mooie</wf>
+    <wf wid="w5" sent="1" para="1" offset="17" length="11">Nederlandse</wf>
+    <wf wid="w6" sent="1" para="1" offset="29" length="5">tekst</wf>
+    <wf wid="w7" sent="1" para="1" offset="34" length="1">.</wf>
+  </text>
+  <terms>
+    <!--dit-->
+    <term tid="t1" type="close" lemma="dit" pos="Q" morphofeat="Pron">
+      <span>
+        <target id="w1" />
+      </span>
+    </term>
+    <!--is-->
+    <term tid="t2" type="open" lemma="is" pos="V" morphofeat="V">
+      <span>
+        <target id="w2" />
+      </span>
+    </term>
+    <!--een-->
+    <term tid="t3" type="close" lemma="een" pos="D" morphofeat="Art">
+      <span>
+        <target id="w3" />
+      </span>
+    </term>
+    <!--mooie-->
+    <term tid="t4" type="open" lemma="mooie" pos="G" morphofeat="Adj">
+      <span>
+        <target id="w4" />
+      </span>
+    </term>
+    <!--Nederlandse-->
+    <term tid="t5" type="open" lemma="nederlandse" pos="G" morphofeat="Adj">
+      <span>
+        <target id="w5" />
+      </span>
+    </term>
+    <!--tekst-->
+    <term tid="t6" type="open" lemma="tekst" pos="N" morphofeat="N">
+      <span>
+        <target id="w6" />
+      </span>
+    </term>
+    <!--.-->
+    <term tid="t7" type="close" lemma="." pos="O" morphofeat="Punc">
+      <span>
+        <target id="w7" />
+      </span>
+    </term>
+  </terms>
+</KAF>

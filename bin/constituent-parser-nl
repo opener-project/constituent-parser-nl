@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/opener/constituent_parsers/nl'
+
+# STDIN.tty? returns `false` if data is being piped into the current process.
+if STDIN.tty?
+  input = nil
+else
+  input = STDIN.read
+end
+
+kernel = Opener::ConstituentParsers::NL.new(:args => ARGV)
+stdout, stderr, process = kernel.run(input)
+
+puts stdout

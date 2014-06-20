@@ -2,8 +2,15 @@
 
 import sys
 import getopt
-import codecs
 import os
+
+this_folder = os.path.dirname(os.path.realpath(__file__))
+
+# This updates the load path to ensure that the local site-packages directory
+# can be used to load packages (e.g. a locally installed copy of lxml).
+sys.path.append(os.path.join(this_folder, 'site-packages/pre_install'))
+
+import codecs
 from VUKafParserPy import KafParser
 from lxml import etree
 import tempfile

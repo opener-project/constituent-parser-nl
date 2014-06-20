@@ -2,34 +2,13 @@
 
 # C extensions
 *.so
+pkg
+Gemfile.lock
 
-# Packages
-*.egg
-*.egg-info
-dist
-build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
-.installed.cfg
-lib
-lib64
+# Ignore the package files.
+core/site-packages/pre_install
 
-# Installer logs
-pip-log.txt
+!.gitkeep
 
-# Unit test / coverage reports
-.coverage
-.tox
-nosetests.xml
-
-# Translations
-*.mo
-
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
+*.log
+tmp/*
