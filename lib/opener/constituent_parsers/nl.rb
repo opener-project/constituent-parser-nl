@@ -42,12 +42,14 @@ module Opener
       # process information.
       #
       # @param [String] input The input to tag.
-      # @return [Array]
+      # @return [String]
       #
       def run(input)
         stdout, stderr, process = capture(input)
+
         raise stderr unless process.success?
-        return stdout, stderr, process
+
+        return stdout
       end
 
       protected
@@ -62,9 +64,9 @@ module Opener
       end
 
       ##
-      # capture3 method doesn't work properly with Jruby, so 
+      # capture3 method doesn't work properly with Jruby, so
       # this is a workaround
-      #    
+      #
       def capture(input)
         Open3.popen3(*command.split(" ")) {|i, o, e, t|
           out_reader = Thread.new { o.read }

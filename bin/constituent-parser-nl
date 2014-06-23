@@ -10,6 +10,5 @@ else
 end
 
 kernel = Opener::ConstituentParsers::NL.new(:args => ARGV)
-stdout, stderr, process = kernel.run(input)
 
-puts stdout
+puts kernel.run(input)
