@@ -34,7 +34,7 @@ module Opener
       # @param [Array] args Commandline arguments passed to the command.
       #
       def command
-        return "#{adjust_python_path} python -OO #{kernel} #{args.join(' ')}"
+        return "#{adjust_python_path} python #{kernel} #{args.join(' ')}"
       end
 
       ##
