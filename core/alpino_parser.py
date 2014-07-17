@@ -32,6 +32,9 @@ this_name = 'alpino kaf constituency parser'
 this_layer = 'constituents'
 
 #### SET THIS VARIABLE TO YOUR LOCAL FOLDER OF ALPINO
+os.environ['SP_CTYPE']='utf8'
+os.environ['SP_CSETLEN']='212'
+os.environ['ALPINO_HOME']='/usr/local/src/Alpino/'
 ALPINO_HOME = os.environ['ALPINO_HOME']
 
 logging.basicConfig(stream=sys.stderr,format='%(asctime)s - %(levelname)s - %(message)s',level=logging.DEBUG)
@@ -73,6 +76,7 @@ def xml_to_penn(filename):
   ## to iso-8859-1, but the real encoding is UTF-8. So we need to force to use this encoding
   
   parser = etree.XMLParser(encoding='UTF-8')
+  #parser = etree.XMLParser(encoding='ISO-8859-1')
   tree = etree.parse(filename,parser)
   
   str = node_to_penn(tree.find('node'))
@@ -159,7 +163,6 @@ for sentence in sentences:
     token = token.replace('[','\[')
     token = token.replace(']','\]')
     token = token.replace('|','\|')
-    #print>>sys.stderr,token.encode('utf-8'),
     alpino_pro.stdin.write(token.encode('utf-8')+' ')
   alpino_pro.stdin.write('\n')
   #print>>sys.stderr
