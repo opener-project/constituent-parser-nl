@@ -34,7 +34,6 @@ this_layer = 'constituents'
 #### SET THIS VARIABLE TO YOUR LOCAL FOLDER OF ALPINO
 os.environ['SP_CTYPE']='utf8'
 os.environ['SP_CSETLEN']='212'
-os.environ['ALPINO_HOME']='/usr/local/src/Alpino/'
 ALPINO_HOME = os.environ['ALPINO_HOME']
 
 logging.basicConfig(stream=sys.stderr,format='%(asctime)s - %(levelname)s - %(message)s',level=logging.DEBUG)
