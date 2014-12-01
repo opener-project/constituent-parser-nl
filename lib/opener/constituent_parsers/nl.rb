@@ -49,7 +49,7 @@ module Opener
 
         raise stderr unless process.success?
 
-        return stdout
+        return stdout.strip
       end
 
       protected
