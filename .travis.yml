@@ -3,6 +3,13 @@ language: ruby
 
 script: bundle exec rake
 
+before_install:
+  - sudo pip install lxml
+  - bash ./script/alpino.sh
+
+env:
+  - ALPINO_HOME=./Alpino
+
 rvm:
   - 2.1
 
