@@ -612,10 +612,10 @@
       <nt id="nter44" label="vg"/>
       <nt id="nter45" label="smain"/>
       <nt id="nter46" label="verb"/>
-      <nt id="nter47" label="np"/>
-      <nt id="nter48" label="mwu"/>
+      <nt id="nter47" label="mwu"/>
+      <nt id="nter48" label="adv"/>
       <nt id="nter49" label="adv"/>
-      <nt id="nter50" label="adv"/>
+      <nt id="nter50" label="np"/>
       <nt id="nter51" label="det"/>
       <nt id="nter52" label="noun"/>
       <nt id="nter53" label="noun"/>
@@ -801,32 +801,32 @@
       <edge from="nter46" id="tre73" to="nter45" head="yes"/>
       <!--  tre74  verb <- draagt -->
       <edge from="ter29" id="tre74" to="nter46"/>
-      <!--  tre75  smain <- np -->
+      <!--  tre75  smain <- mwu -->
       <edge from="nter47" id="tre75" to="nter45"/>
-      <!--  tre76  np <- mwu -->
+      <!--  tre76  mwu <- adv -->
       <edge from="nter48" id="tre76" to="nter47"/>
-      <!--  tre77  mwu <- adv -->
-      <edge from="nter49" id="tre77" to="nter48"/>
-      <!--  tre78  adv <- onder -->
-      <edge from="ter30" id="tre78" to="nter49"/>
-      <!--  tre79  mwu <- adv -->
-      <edge from="nter50" id="tre79" to="nter48"/>
-      <!--  tre80  adv <- meer -->
-      <edge from="ter31" id="tre80" to="nter50"/>
+      <!--  tre77  adv <- onder -->
+      <edge from="ter30" id="tre77" to="nter48"/>
+      <!--  tre78  mwu <- adv -->
+      <edge from="nter49" id="tre78" to="nter47"/>
+      <!--  tre79  adv <- meer -->
+      <edge from="ter31" id="tre79" to="nter49"/>
+      <!--  tre80  smain <- np -->
+      <edge from="nter50" id="tre80" to="nter45"/>
       <!--  tre81  np <- det -->
-      <edge from="nter51" id="tre81" to="nter47"/>
+      <edge from="nter51" id="tre81" to="nter50"/>
       <!--  tre82  det <- de -->
       <edge from="ter32" id="tre82" to="nter51"/>
       <!--  tre83  np <- noun -->
-      <edge from="nter52" id="tre83" to="nter47" head="yes"/>
+      <edge from="nter52" id="tre83" to="nter50" head="yes"/>
       <!--  tre84  noun <- titels -->
       <edge from="ter33" id="tre84" to="nter52"/>
       <!--  tre85  np <- noun -->
-      <edge from="nter53" id="tre85" to="nter47"/>
+      <edge from="nter53" id="tre85" to="nter50"/>
       <!--  tre86  noun <- prinses -->
       <edge from="ter34" id="tre86" to="nter53"/>
       <!--  tre87  np <- pp -->
-      <edge from="nter54" id="tre87" to="nter47"/>
+      <edge from="nter54" id="tre87" to="nter50"/>
       <!--  tre88  pp <- prep -->
       <edge from="nter55" id="tre88" to="nter54" head="yes"/>
       <!--  tre89  prep <- van -->
@@ -892,9 +892,9 @@
       <nt id="nter80" label="prep"/>
       <nt id="nter81" label="np"/>
       <nt id="nter82" label="noun"/>
-      <nt id="nter83" label="name"/>
-      <nt id="nter84" label="pp"/>
-      <nt id="nter85" label="prep"/>
+      <nt id="nter83" label="mwu"/>
+      <nt id="nter84" label="name"/>
+      <nt id="nter85" label="name"/>
       <nt id="nter86" label="name"/>
       <nt id="nter87" label="punct"/>
       <t id="ter45">
@@ -990,18 +990,18 @@
       <edge from="nter82" id="tre130" to="nter81" head="yes"/>
       <!--  tre131  noun <- prins -->
       <edge from="ter51" id="tre131" to="nter82"/>
-      <!--  tre132  np <- name -->
+      <!--  tre132  np <- mwu -->
       <edge from="nter83" id="tre132" to="nter81"/>
-      <!--  tre133  name <- Claus -->
-      <edge from="ter52" id="tre133" to="nter83"/>
-      <!--  tre134  np <- pp -->
-      <edge from="nter84" id="tre134" to="nter81"/>
-      <!--  tre135  pp <- prep -->
-      <edge from="nter85" id="tre135" to="nter84" head="yes"/>
-      <!--  tre136  prep <- van -->
+      <!--  tre133  mwu <- name -->
+      <edge from="nter84" id="tre133" to="nter83"/>
+      <!--  tre134  name <- Claus -->
+      <edge from="ter52" id="tre134" to="nter84"/>
+      <!--  tre135  mwu <- name -->
+      <edge from="nter85" id="tre135" to="nter83"/>
+      <!--  tre136  name <- van -->
       <edge from="ter53" id="tre136" to="nter85"/>
-      <!--  tre137  pp <- name -->
-      <edge from="nter86" id="tre137" to="nter84"/>
+      <!--  tre137  mwu <- name -->
+      <edge from="nter86" id="tre137" to="nter83"/>
       <!--  tre138  name <- Amsberg -->
       <edge from="ter54" id="tre138" to="nter86"/>
       <!--  tre139  top <- punct -->
