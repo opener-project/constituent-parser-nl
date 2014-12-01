@@ -9,4 +9,4 @@ set -x
 
 wget --quiet https://s3-eu-west-1.amazonaws.com/opener/alpino/Alpino-x86_64-linux-glibc2.5-20522-sicstus.tar.gz
 
-tar -xvf Alpino-x86_64-linux-glibc2.5-20522-sicstus.tar.gz
+tar -xf Alpino-x86_64-linux-glibc2.5-20522-sicstus.tar.gz
